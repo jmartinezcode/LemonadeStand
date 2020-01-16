@@ -15,12 +15,6 @@ namespace Lemonade
         public double pricePerCup;
 
         //Constructor
-        public Recipe()
-        {
-            AddLemons();
-        }
-
-        //Member Methods (CAN DO)
         public void AddLemons()
         {
             Console.WriteLine("How many lemons do you want to add?");
