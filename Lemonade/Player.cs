@@ -25,10 +25,18 @@ namespace Lemonade
         }
 
         //Member Methods (CAN DO)
-        public void FillPitcher(Inventory inventory)
+        public void FillPitcher()
         {
             while(pitcher.cupsLeftInPitcher == 0)
             {
+                if(inventory.lemons.Count >= recipe.amountOfLemons && inventory.sugarCubes.Count >= recipe.amountOfSugarCubes && inventory.iceCubes.Count >= recipe.amountOfIceCubes && inventory.cups.Count > 0)
+                {
+                
+                }
+                else
+                {
+                    Console.WriteLine("We are sold out");
+                }
             }
         }
 

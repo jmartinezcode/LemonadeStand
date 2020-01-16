@@ -15,29 +15,29 @@ namespace Lemonade
         public double pricePerCup;
 
         //Constructor
-        public void AddLemons()
+        public void AddLemons(Inventory inventory)
         {
             Console.WriteLine("How many lemons do you want to add?");
             amountOfLemons = Int32.Parse(Console.ReadLine());
-            if (amountOfLemons > lemons.Count)
+            if (amountOfLemons > inventory.lemons.Count)
             {
 
             }
         }
-        public void AddSugar()
+        public void AddSugar(Inventory inventory)
         {
             Console.WriteLine("How many sugar cubes do you want to add?");
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
-            if (amountOfSugarCubes > sugarCubes.Count)
+            if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
-
+ 
             }
         }
-        public void AddIce()
+        public void AddIce(Inventory inventory)
         {
             Console.WriteLine("How many ice cubes do you want to add?");
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
-            if (amountOfIceCubes > iceCubes.Count)
+            if (amountOfIceCubes > inventory.iceCubes.Count)
             {
 
             }
