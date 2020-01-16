@@ -8,5 +8,15 @@ namespace Lemonade
 {
     class Game
     {
+        //Member Variables (HAS A)
+        Player player;
+        List<Day> days;
+        int currentDay;
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+
+
     }
 }

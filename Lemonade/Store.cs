@@ -8,5 +8,16 @@ namespace Lemonade
 {
     class Store
     {
+        //Member Variables (HAS A)
+        double pricePerLemon;
+        double pricePerSugarCube;
+        double pricePerIceCube;
+        double pricePerCup;
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+
+
     }
 }
