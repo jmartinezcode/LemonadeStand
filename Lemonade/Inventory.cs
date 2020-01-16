@@ -14,7 +14,7 @@ namespace Lemonade
         public List<SugarCube> sugarCubes;
         public Inventory()
         {
-
+            lemons = new List<Lemon>();
         }
     }
 }

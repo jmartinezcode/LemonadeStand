@@ -18,11 +18,19 @@ namespace Lemonade
         //Constructor
         public Player()
         {
+            pitcher = new Pitcher();
+            inventory = new Inventory();
+            recipe = new Recipe();
 
         }
 
         //Member Methods (CAN DO)
-
+        public void FillPitcher(Inventory inventory)
+        {
+            while(pitcher.cupsLeftInPitcher == 0)
+            {
+            }
+        }
 
     }
 }
