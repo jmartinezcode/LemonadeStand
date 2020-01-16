@@ -14,7 +14,7 @@ namespace Lemonade
         //Constructor
         public Pitcher()
         {
-            cupsLeftInPitcher = (12 - 0);
+            cupsLeftInPitcher = 12;
         }
 
         //Member Methods (CAN DO)

@@ -18,9 +18,13 @@ namespace Lemonade
         public Game()
         {
             random = new Random();
+            player = new Player();
         }
 
         //Member Methods (CAN DO)
-
+        
+        public void SellCup()
+        {
+        }
     }
 }
