@@ -12,11 +12,15 @@ namespace Lemonade
         Player player;
         List<Day> days;
         int currentDay;
+        public Random random;
 
         //Constructor
+        public Game()
+        {
+            random = new Random();
+        }
 
         //Member Methods (CAN DO)
-
 
     }
 }

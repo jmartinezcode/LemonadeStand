@@ -16,6 +16,10 @@ namespace Lemonade
         public Pitcher pitcher;
 
         //Constructor
+        public Player()
+        {
+
+        }
 
         //Member Methods (CAN DO)
 
