@@ -25,17 +25,19 @@ namespace Lemonade
         public void SetTemperature()
         {
             // Set Temperature randomly between 50 and 100 degrees
+            random = new Random();
             temperature = random.Next(50, 101);
         }
         public void SetCondition()
         {
             // Randomly pull from weatherConditions List
+            random = new Random();
             condition = weatherConditions[random.Next(weatherConditions.Count)];
         }
         public void SetForecast()
         {
             // Takes output from SetCondition and SetTemperature to output predictedForecast
-            predictedForecast = temperature + condition;
+            predictedForecast = temperature + " degrees and " + condition;
         }
 
 
