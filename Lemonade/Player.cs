@@ -8,5 +8,17 @@ namespace Lemonade
 {
     class Player
     {
+        //Member Variables (HAS A)
+        public string name;
+        public Inventory inventory;
+        public Wallet wallet;
+        public Recipe recipe;
+        public Pitcher pitcher;
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+
+
     }
 }
