@@ -20,13 +20,8 @@ namespace Lemonade
             random = new Random();
             player = new Player();
             UserInterface.DisplayWelcomeMessage();
-            DisplayStatus();
         }
-        //Member Methods (CAN DO)
-        public void DisplayStatus()
-        {
-            // Displays Current Status of the game: Predicted Weather, Current Money, etc.
-        }        
+        //Member Methods (CAN DO)     
         public void SellCup()
         {
         }
