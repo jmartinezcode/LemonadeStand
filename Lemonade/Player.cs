@@ -31,7 +31,18 @@ namespace Lemonade
             {
                 if(inventory.lemons.Count >= recipe.amountOfLemons && inventory.sugarCubes.Count >= recipe.amountOfSugarCubes && inventory.iceCubes.Count >= recipe.amountOfIceCubes && inventory.cups.Count > 0)
                 {
-                
+                    for (int i = 0; i < recipe.amountOfLemons; i++)
+                    {
+                        inventory.lemons.Remove(new Lemon());
+                    }
+                    for (int i = 0; i < recipe.amountOfSugarCubes; i++)
+                    {
+                        inventory.sugarCubes.Remove(new SugarCube());
+                    }
+                    for (int i = 0; i < recipe.amountOfIceCubes; i++)
+                    {
+                        inventory.iceCubes.Remove(new IceCube());
+                    }
                 }
                 else
                 {
@@ -39,6 +50,9 @@ namespace Lemonade
                 }
             }
         }
+        public void SellCup()
+        {
 
+        }
     }
 }
