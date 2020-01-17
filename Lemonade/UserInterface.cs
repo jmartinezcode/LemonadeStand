@@ -12,5 +12,10 @@ namespace Lemonade
         {
             Console.WriteLine("Welcome to the Lemonade Stand Game!");
         }
+        public static void DisplayGameStatus()
+        {
+            // Displays Game's Status 
+            Console.WriteLine("You have...");
+        }
     }
 }
