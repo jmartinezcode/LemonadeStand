@@ -21,7 +21,6 @@ namespace Lemonade
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
-
             }
         }
         public void AddSugar(Inventory inventory)

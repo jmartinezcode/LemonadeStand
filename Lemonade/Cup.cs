@@ -10,7 +10,7 @@ namespace Lemonade
     {
         public Cup()
         {
-
+            name = "Cup";
         }
     }
 }
