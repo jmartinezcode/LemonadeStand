@@ -9,8 +9,11 @@ namespace Lemonade
     class Customer
     {
         public string name;
-        public Customer()
+        Random random;
+        Weather weather;
+        public Customer(string name)
         {
+            this.name = name;
             List<string> namesList = new List<string>() { "Eva", "Lorine", "Carolee", "Juan", "Parthenia", "Cory",
                                                           "Dung", "Larisa", "Cyndi", "Rubye", "Aja", "Jerrold",
                                                           "Johnette", "April", "Criselda", "Tressa", "Theressa", 
@@ -26,10 +29,15 @@ namespace Lemonade
         // The price of product as well as weather/temperature should affect demand, 
         // so that if the price is too high, sales will decrease, or if the price is too low, 
         // sales will increase, etc.
-
         public void ProbabilityToPurchase()
         {
             
+        }
+        
+        
+        public void CalculatePriceFactor()
+        {
+
         }
     }
 }

@@ -19,15 +19,10 @@ namespace Lemonade
         {
             random = new Random();
             player = new Player();
-            WelcomeMessage();
+            UserInterface.DisplayWelcomeMessage();
             DisplayStatus();
         }
         //Member Methods (CAN DO)
-        public void WelcomeMessage()
-        {
-            // Welcome message to the player
-            Console.WriteLine("Welcome to the Lemonade Stand Game!");
-        }
         public void DisplayStatus()
         {
             // Displays Current Status of the game: Predicted Weather, Current Money, etc.
