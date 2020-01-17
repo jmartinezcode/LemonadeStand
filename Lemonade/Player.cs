@@ -42,6 +42,14 @@ namespace Lemonade
                     {
                         inventory.iceCubes.Remove(new IceCube());
                     }
+                    if(inventory.cups.Count < 12)
+                    {
+                        pitcher.cupsLeftInPitcher = inventory.cups.Count;
+                    }
+                    else
+                    {
+                        pitcher.cupsLeftInPitcher = 12;
+                    }
                 }
                 else
                 {
@@ -51,7 +59,7 @@ namespace Lemonade
         }
         public void SellCup()
         {
-
+            
         }
     }
 }
