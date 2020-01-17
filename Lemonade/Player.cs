@@ -21,7 +21,6 @@ namespace Lemonade
             pitcher = new Pitcher();
             inventory = new Inventory();
             recipe = new Recipe();
-
         }
 
         //Member Methods (CAN DO)

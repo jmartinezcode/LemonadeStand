@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class UserInterface
+    public static class UserInterface
     {
+        public static void DisplayWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the Lemonade Stand Game!");
+        }
     }
 }
