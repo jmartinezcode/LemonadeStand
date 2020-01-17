@@ -29,36 +29,40 @@ namespace Lemonade
         {
             Console.WriteLine("How many lemons would you like to buy?");
             int lemonsBought = Int32.Parse(Console.ReadLine());
+            Lemon lemon = new Lemon();
             for (int i = 0; i < lemonsBought; i++)
             {
-                player.inventory.lemons.Add(new Lemon());
+                player.inventory.lemons.Add(lemon);
             }
         }
         public void BuySugarCubes(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
             int sugarCubesBought = Int32.Parse(Console.ReadLine());
+            SugarCube sugarCube = new SugarCube();
             for (int i = 0; i < sugarCubesBought; i++)
             {
-                player.inventory.sugarCubes.Add(new SugarCube());
+                player.inventory.sugarCubes.Add(sugarCube);
             }
         }
         public void BuyIceCubes(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
             int iceCubesBought = Int32.Parse(Console.ReadLine());
+            IceCube iceCube = new IceCube();
             for (int i = 0; i < iceCubesBought; i++)
             {
-                player.inventory.iceCubes.Add(new IceCube());
+                player.inventory.iceCubes.Add(iceCube);
             }
         }
         public void BuyCups(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
             int cupsBought = Int32.Parse(Console.ReadLine());
+            Cup cup = new Cup();
             for (int i = 0; i < cupsBought; i++)
             {
-                player.inventory.cups.Add(new Cup());
+                player.inventory.cups.Add(cup);
             }
         }
     }
