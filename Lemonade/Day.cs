@@ -42,7 +42,8 @@ namespace Lemonade
             // Create a List of Customers
             for (int i = 0; i < numberOfCustomers; i++)
             {
-                // 
+                Customer customer = new Customer(); 
+                customers.Add(customer);
             }
         }
     }

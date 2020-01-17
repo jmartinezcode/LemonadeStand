@@ -9,20 +9,10 @@ namespace Lemonade
     class Customer
     {
         public string name;
-        Random random;
-        Weather weather;
-        public Customer(string name)
+        Random random;        
+        public Customer()
         {
-            this.name = name;
-            List<string> namesList = new List<string>() { "Eva", "Lorine", "Carolee", "Juan", "Parthenia", "Cory",
-                                                          "Dung", "Larisa", "Cyndi", "Rubye", "Aja", "Jerrold",
-                                                          "Johnette", "April", "Criselda", "Tressa", "Theressa", 
-                                                          "Isidro", "Renata", "Danyell", "Perry", "Fe", "Jeremy", 
-                                                          "Dionne", "Dessie",  "Toby", "Christiana", "Stanton", "Leona",
-                                                          "Barabara", "Buddy", "Lynn", "Freddy", "Numbers", "Mae", 
-                                                          "Isela", "Macy", "Alessandra", "Sondra", "Ashlyn", "Jacinda",
-                                                          "Erick", "Maryanna", "Thora", "Junita", "Lizeth", "Alena",
-                                                          "Mandy", "Lisbeth", "Wendi" };
+            
         }
         // TO DO
         // Implement a price factor, weather and heat factor
@@ -33,8 +23,21 @@ namespace Lemonade
         {
             
         }
-        
-        
+
+        //public string RandomCustomerName()
+        //{
+        //    //choose random name from list
+        //    List<string> nameslist = new List<string>() { "eva", "lorine", "carolee", "juan", "parthenia", "cory",
+        //                                                  "dung", "larisa", "cyndi", "rubye", "aja", "jerrold",
+        //                                                  "johnette", "april", "criselda", "tressa", "theressa",
+        //                                                  "isidro", "renata", "danyell", "perry", "fe", "jeremy",
+        //                                                  "dionne", "dessie",  "toby", "christiana", "stanton", "leona",
+        //                                                  "barabara", "buddy", "lynn", "freddy", "numbers", "mae",
+        //                                                  "isela", "macy", "alessandra", "sondra", "ashlyn", "jacinda",
+        //                                                  "erick", "maryanna", "thora", "junita", "lizeth", "alena",
+        //                                                  "mandy", "lisbeth", "wendi" };
+        //    return name = nameslist[random.Next(nameslist.Count)];
+        //}
         public void CalculatePriceFactor()
         {
 

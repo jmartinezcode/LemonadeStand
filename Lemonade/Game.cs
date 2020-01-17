@@ -19,6 +19,7 @@ namespace Lemonade
         {
             random = new Random();
             player = new Player();
+            days = new List<Day>();
             UserInterface.DisplayWelcomeMessage();
         }
         //Member Methods (CAN DO)     
