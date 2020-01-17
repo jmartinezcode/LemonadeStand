@@ -14,6 +14,7 @@ namespace Lemonade
         public Day()
         {
             weather = new Weather();
+            customers = new List<Customer>();
         }
     }
 }
