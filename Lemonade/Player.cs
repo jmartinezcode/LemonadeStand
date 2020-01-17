@@ -57,9 +57,13 @@ namespace Lemonade
                 }
             }
         }
-        public void SellCup()
+        public void SellCup(Customer customer)
         {
-            
+            if (customer.ProbabilityToPurchase = true)
+            {
+                pitcher.cupsLeftInPitcher--;
+                inventory.cups.Remove(new Cup());
+            }
         }
     }
 }

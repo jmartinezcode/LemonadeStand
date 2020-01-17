@@ -14,6 +14,7 @@ namespace Lemonade
         double pricePerIceCube;
         double pricePerCup;
         Random random;
+        Wallet wallet;
 
         //Constructor
         public Store()
@@ -31,9 +32,13 @@ namespace Lemonade
             Console.WriteLine("How many lemons would you like to buy?");
             int lemonsBought = Int32.Parse(Console.ReadLine());
             Lemon lemon = new Lemon();
-            for (int i = 0; i < lemonsBought; i++)
+            if (wallet.Money > pricePerLemon)
             {
-                player.inventory.lemons.Add(lemon);
+                wallet.Money -= pricePerLemon;
+                for (int i = 0; i < lemonsBought; i++)
+                {
+                    player.inventory.lemons.Add(lemon);
+                }
             }
         }
         public void BuySugarCubes(Player player)
@@ -41,9 +46,13 @@ namespace Lemonade
             Console.WriteLine("How many lemons would you like to buy?");
             int sugarCubesBought = Int32.Parse(Console.ReadLine());
             SugarCube sugarCube = new SugarCube();
-            for (int i = 0; i < sugarCubesBought; i++)
+            if (wallet.Money > pricePerSugarCube)
             {
-                player.inventory.sugarCubes.Add(sugarCube);
+                wallet.Money = -pricePerSugarCube;
+                for (int i = 0; i < sugarCubesBought; i++)
+                {
+                    player.inventory.sugarCubes.Add(sugarCube);
+                }
             }
         }
         public void BuyIceCubes(Player player)
@@ -51,9 +60,13 @@ namespace Lemonade
             Console.WriteLine("How many lemons would you like to buy?");
             int iceCubesBought = Int32.Parse(Console.ReadLine());
             IceCube iceCube = new IceCube();
-            for (int i = 0; i < iceCubesBought; i++)
+            if (wallet.Money > pricePerIceCube)
             {
-                player.inventory.iceCubes.Add(iceCube);
+                wallet.Money -= pricePerIceCube;
+                for (int i = 0; i < iceCubesBought; i++)
+                {
+                    player.inventory.iceCubes.Add(iceCube);
+                }
             }
         }
         public void BuyCups(Player player)
@@ -61,9 +74,13 @@ namespace Lemonade
             Console.WriteLine("How many lemons would you like to buy?");
             int cupsBought = Int32.Parse(Console.ReadLine());
             Cup cup = new Cup();
-            for (int i = 0; i < cupsBought; i++)
+            if (wallet.Money > pricePerCup)
             {
-                player.inventory.cups.Add(cup);
+                wallet.Money -= pricePerCup;
+                for (int i = 0; i < cupsBought; i++)
+                {
+                    player.inventory.cups.Add(cup);
+                }
             }
         }
     }
