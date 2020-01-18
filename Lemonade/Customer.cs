@@ -19,41 +19,36 @@ namespace Lemonade
         // The price of product as well as weather/temperature should affect demand, 
         // so that if the price is too high, sales will decrease, or if the price is too low, 
         // sales will increase, etc.
+
         public void ProbabilityToPurchase(Weather weather, Player player)
         {
-            if(weather.temperature > 89)
+            int randomBuy;
+            randomBuy = random.Next(10);
+            if(weather.temperature >= 90)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy > 2)
+                if (randomBuy > 1) // 80% 
                 {
                     player.SellCup();
                 }
             }
-            if (weather.temperature < 90 && weather.temperature >79)
-            {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy > 4)
+            else if (weather.temperature >= 80)
+            {                
+                if (randomBuy > 3) // 60%
                 {
                     player.SellCup();
                 }
             }
-            if (weather.temperature < 80 && weather.temperature > 69)
+            else if (weather.temperature >=70)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy > 6)
+                if (randomBuy > 5) // 40%
                 {
                     player.SellCup();
                 }
             }
-            if (weather.temperature < 70)
+            else
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy > 8)
-                {
+                if (randomBuy > 7) // 20%
+                { 
                     player.SellCup();
                 }
             }
