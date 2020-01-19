@@ -70,95 +70,74 @@ namespace Lemonade
         //}
         public void CalculatePriceFactor(Recipe recipe, Player player)
         {
-            if(recipe.pricePerCup >= 1)
+            int randomBuy;
+            randomBuy = random.Next(10);
+            if (recipe.pricePerCup >= 1)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 9)
+                if (randomBuy >= 9) // 10%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .9 && recipe.pricePerCup < 1)
+            else if (recipe.pricePerCup >= .9)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 8)
+                if (randomBuy >= 8) // 20%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .8 && recipe.pricePerCup < .9)
+            else if (recipe.pricePerCup >= .8)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 7)
+                if (randomBuy >= 7) // 30%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .7 && recipe.pricePerCup < .8)
+            else if (recipe.pricePerCup >= .7)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 6)
+                if (randomBuy >= 6) // 40%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .6 && recipe.pricePerCup < .7)
+            else if (recipe.pricePerCup >= .6)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 5)
+                if (randomBuy >= 5) // 50%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .5 && recipe.pricePerCup < .6)
+            else if (recipe.pricePerCup >= .5)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 4)
+                if (randomBuy >= 4) // 60%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .4 && recipe.pricePerCup < .5)
+            else if (recipe.pricePerCup >= .4)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 3)
+                if (randomBuy >= 3) // 70%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .3 && recipe.pricePerCup < .4)
+            else if (recipe.pricePerCup >= .3)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 2)
+                if (randomBuy >= 2) // 80%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup >= .2 && recipe.pricePerCup < .3)
+            else if (recipe.pricePerCup >= .2)
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 1)
+                if (randomBuy >= 1) // 90%
                 {
                     player.SellCup();
                 }
             }
-            if (recipe.pricePerCup > .2)
+            else 
             {
-                int randombuy;
-                randombuy = random.Next(0, 10);
-                if (randombuy >= 0)
-                {
-                    player.SellCup();
-                }
+                player.SellCup();
             }
         }
     }
