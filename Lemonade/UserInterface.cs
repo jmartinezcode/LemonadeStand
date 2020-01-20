@@ -77,6 +77,18 @@ namespace Lemonade
             Console.WriteLine("4. Buy 5 Cups         ${0}     Cup   Inventory: {1}", cupPrice, cupCount);
             Console.WriteLine("5. Exit Store");
         }
+        public static void DisplayRecipe(int lemonRecipe, int lemonCount,
+                                         int sugarRecipe, int sugarCount,
+                                         int iceRecipe, int iceCount)
+        {
+            Console.WriteLine("Your Award Winning Recipe \n=================================================\n");
+            Console.WriteLine("1. Lemons per Pitcher:       {0}   Lemon Inventory: {1}", lemonRecipe, lemonCount);
+            Console.WriteLine("2. Sugar Cubes per Pitcher:  {0}   Sugar Inventory: {1}", sugarRecipe, sugarCount);
+            Console.WriteLine("3. Ice Cubes per Pitcher:    {0}   Ice   Inventory: {1}", iceRecipe, iceCount);
+            Console.WriteLine("4. Begin Round!");
+            Console.WriteLine("5. Go to the Store");
+            Console.WriteLine("Enter the number of the ingredient you would like to change (1-3)");
+        }
         public static void DisplayForecast(string forecast)
         {
             Console.WriteLine("Today's Predicted Weather: {0}\n", forecast);
