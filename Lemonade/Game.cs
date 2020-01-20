@@ -12,7 +12,7 @@ namespace Lemonade
         Player player;
         List<Day> days;
         Day day;
-        
+        Store store;
         public Random random;
 
         int currentDay;
@@ -24,6 +24,7 @@ namespace Lemonade
             player = new Player();
             days = new List<Day>();
             day = new Day();
+            store = new Store();
             currentDay = 1;
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
@@ -67,7 +68,11 @@ namespace Lemonade
         public void RunGame()
         {
             // Runs Game            
-            UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  //commented out to determine why day is null.
+            UserInterface.DisplayStore(store.bulkLemonPrice , player.inventory.lemons.Count, 
+                                       store.bulkSugarPrice, player.inventory.sugarCubes.Count, 
+                                       store.bulkIcePrice, player.inventory.iceCubes.Count, 
+                                       store.bulkCupPrice, player.inventory.cups.Count, 
+                                       player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  
             Console.WriteLine("There are {0} customers today", days[currentDay -1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
