@@ -23,7 +23,7 @@ namespace Lemonade
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
-                UserInterface.NotenoughInventory(lemon.name);
+                UserInterface.NotEnoughInventory(lemon.name);
             }
         }
         public void AddSugar(Inventory inventory)
@@ -31,7 +31,7 @@ namespace Lemonade
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
-                UserInterface.NotenoughInventory(sugarCube.name);
+                UserInterface.NotEnoughInventory(sugarCube.name);
             }
         }
         public void AddIce(Inventory inventory)
@@ -39,7 +39,7 @@ namespace Lemonade
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
             {
-                UserInterface.NotenoughInventory(inventory.iceCubes[0].name);
+                UserInterface.NotEnoughInventory(iceCube.name);
             }
         }
         public void CupPrice()
@@ -53,33 +53,33 @@ namespace Lemonade
             switch (userinput)
             {
                 case "1":
-                    UserInterface.AddItemsToRecipe(inventory.lemons[0].name);
+                    UserInterface.AddItemsToRecipe(lemon.name);
                     amountOfLemons = Int32.Parse(Console.ReadLine());
                     if (amountOfLemons > inventory.lemons.Count)
                     {
-                        UserInterface.NotenoughInventory(lemon.name);
+                        UserInterface.NotEnoughInventory(lemon.name);
                     }
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count, 
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes, 
                         inventory.iceCubes.Count,pricePerCup);
                     break;
                 case "2":
-                    UserInterface.AddItemsToRecipe(inventory.sugarCubes[0].name);
+                    UserInterface.AddItemsToRecipe(sugarCube.name);
                     amountOfSugarCubes = Int32.Parse(Console.ReadLine());
                     if (amountOfSugarCubes > inventory.sugarCubes.Count)
                     {
-                        UserInterface.NotenoughInventory(sugarCube.name);
+                        UserInterface.NotEnoughInventory(sugarCube.name);
                     }
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                          amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                          inventory.iceCubes.Count, pricePerCup);
                     break;
                 case "3":
-                    UserInterface.AddItemsToRecipe(inventory.iceCubes[0].name);
+                    UserInterface.AddItemsToRecipe(iceCube.name);
                     amountOfIceCubes = Int32.Parse(Console.ReadLine());
                     if (amountOfIceCubes > inventory.iceCubes.Count)
                     {
-                        UserInterface.NotenoughInventory(inventory.iceCubes[0].name);
+                        UserInterface.NotEnoughInventory(iceCube.name);
                     }
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                          amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
