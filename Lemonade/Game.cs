@@ -12,6 +12,8 @@ namespace Lemonade
         Player player;
         List<Day> days;
         Day day;
+        Store store;
+        Wallet wallet;
         
         public Random random;
 
@@ -24,11 +26,12 @@ namespace Lemonade
             player = new Player();
             days = new List<Day>();
             day = new Day();
+            store = new Store();
+            wallet = new Wallet();
             currentDay = 1;
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
-            SetGameLength(input);
-            CheckCurrentDay();
+
         }
         //Member Methods (CAN DO)            
 
@@ -60,10 +63,6 @@ namespace Lemonade
                 }
             }
         }
-
-        public void SellCup()
-        {
-        }
         public void RunGame()
         {
             // Runs Game            
@@ -75,6 +74,7 @@ namespace Lemonade
         {
             do
             {
+                player.inventory.iceCubes.Clear();
                 Console.ReadLine();
                 RunGame();
                 try

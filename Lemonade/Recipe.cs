@@ -21,6 +21,7 @@ namespace Lemonade
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
+                Console.WriteLine("You do not have enough lemons");
             }
         }
         public void AddSugar(Inventory inventory)
@@ -29,7 +30,7 @@ namespace Lemonade
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
- 
+                Console.WriteLine("You do not have enough sugar cubes.");
             }
         }
         public void AddIce(Inventory inventory)
@@ -38,7 +39,7 @@ namespace Lemonade
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
             {
-
+                Console.WriteLine("You do not have enough ice cubes");
             }
         }
         public void CupPrice()

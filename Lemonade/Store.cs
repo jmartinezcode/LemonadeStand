@@ -15,12 +15,12 @@ namespace Lemonade
         double pricePerCup;
         Random random;
         Wallet wallet;
-        UserInterface;
 
         //Constructor
         public Store()
         {
             // Set random prices of each item
+            random = new Random();
             pricePerLemon = random.Next(95, 105) / 100.0; 
             pricePerSugarCube = random.Next(3, 10) / 100.0;
             pricePerIceCube = random.Next(2, 4) / 100.0;
