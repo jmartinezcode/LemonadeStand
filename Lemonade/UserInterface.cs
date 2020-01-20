@@ -119,11 +119,11 @@ namespace Lemonade
         }
         public static void NotEnoughMoney(string itemName)
         {
-            Console.WriteLine($"You do not have enough funds to purchase {itemName}");
+            Console.WriteLine($"You do not have enough funds to purchase {itemName}s");
         }
-        public static void NotenoughInventory(string itemName)
+        public static void NotEnoughInventory(string itemName)
         {
-            Console.WriteLine($"You do not have enough {itemName} in your inventory to add it to the recipe");
+            Console.WriteLine($"You do not have enough {itemName}s in your inventory to add it to the recipe");
         } 
         public static void BuyItem(int itemCount, string itemName)
         {

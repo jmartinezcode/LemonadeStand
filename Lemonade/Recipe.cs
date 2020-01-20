@@ -23,7 +23,7 @@ namespace Lemonade
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
-                UserInterface.NotenoughInventory(lemon.name);
+                UserInterface.NotEnoughInventory(lemon.name);
             }
             UserInterface.AdjustingRecipe(amountOfLemons, lemon.name);
         }
@@ -32,7 +32,7 @@ namespace Lemonade
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
-                UserInterface.NotenoughInventory(sugarCube.name);
+                UserInterface.NotEnoughInventory(sugarCube.name);
             }
             UserInterface.AdjustingRecipe(amountOfSugarCubes, sugarCube.name);
         }
@@ -41,7 +41,7 @@ namespace Lemonade
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
             {
-                UserInterface.NotenoughInventory(iceCube.name);
+                UserInterface.NotEnoughInventory(iceCube.name);
             }
             UserInterface.AdjustingRecipe(amountOfIceCubes, iceCube.name);
         }

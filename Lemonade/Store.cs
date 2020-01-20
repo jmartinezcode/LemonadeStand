@@ -39,6 +39,12 @@ namespace Lemonade
             bulkSugarPrice = Math.Round(bulkQty * pricePerSugarCube, 2);
             bulkIcePrice = Math.Round(bulkQty * pricePerIceCube, 2);
             bulkCupPrice = Math.Round(bulkQty * pricePerCup, 2);
+
+            //Objects to get name
+            //Lemon lemon;
+            //SugarCube sugarCube;
+            //IceCube iceCube;
+            //Cup cup;
         }
 
         //Member Methods (CAN DO)
@@ -46,9 +52,9 @@ namespace Lemonade
         {
             int lemonsBought = Int32.Parse(Console.ReadLine());
             Lemon lemon = new Lemon();
-            if (wallet.Money > pricePerLemon)
+            if (player.wallet.Money > pricePerLemon)
             {
-                wallet.Money -= pricePerLemon;
+                player.wallet.Money -= pricePerLemon;
                 for (int i = 0; i < lemonsBought; i++)
                 {
                     player.inventory.lemons.Add(lemon);
@@ -59,9 +65,9 @@ namespace Lemonade
         {
             int sugarCubesBought = Int32.Parse(Console.ReadLine());
             SugarCube sugarCube = new SugarCube();
-            if (wallet.Money > pricePerSugarCube)
+            if (player.wallet.Money > pricePerSugarCube)
             {
-                wallet.Money = -pricePerSugarCube;
+                player.wallet.Money = -pricePerSugarCube;
                 for (int i = 0; i < sugarCubesBought; i++)
                 {
                     player.inventory.sugarCubes.Add(sugarCube);
@@ -72,7 +78,7 @@ namespace Lemonade
         {
             int iceCubesBought = Int32.Parse(Console.ReadLine());
             IceCube iceCube = new IceCube();
-            if (wallet.Money > pricePerIceCube)
+            if (player.wallet.Money > pricePerIceCube)
             {
                 wallet.Money -= pricePerIceCube;
                 for (int i = 0; i < iceCubesBought; i++)
@@ -100,11 +106,12 @@ namespace Lemonade
             switch (userinput)
             {
                 case "1":
-                    if (wallet.Money >= (pricePerLemon * bulkQty))
+                    Lemon lemon = new Lemon();
+                    if (player.wallet.Money >= (pricePerLemon * bulkQty))
                     {
-                        UserInterface.BuyItem(bulkQty, player.inventory.lemons[0].name);
-                        wallet.Money -= (pricePerLemon * bulkQty);
-                        Lemon lemon = new Lemon();
+                        
+                        UserInterface.BuyItem(bulkQty, lemon.name);
+                        player.wallet.Money -= (pricePerLemon * bulkQty);                        
                         for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.lemons.Add(lemon);
@@ -112,15 +119,15 @@ namespace Lemonade
                     }
                     else
                     {
-                        Console.WriteLine("You do not have enough money to make that purchase.");
+                        UserInterface.NotEnoughMoney(lemon.name);
                     }
                     break;
                 case "2":
-                    if (wallet.Money >= (pricePerSugarCube * bulkQty))
+                    SugarCube sugarCube = new SugarCube();
+                    if (player.wallet.Money >= (pricePerSugarCube * bulkQty))
                     {
-                        UserInterface.BuyItem(bulkQty, player.inventory.sugarCubes[0].name);
-                        wallet.Money -= (pricePerSugarCube * bulkQty);
-                        SugarCube sugarCube = new SugarCube();
+                        UserInterface.BuyItem(bulkQty, sugarCube.name);
+                        player.wallet.Money -= (pricePerSugarCube * bulkQty);                        
                         for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.sugarCubes.Add(sugarCube);
@@ -128,31 +135,31 @@ namespace Lemonade
                     }
                     else
                     {
-                        Console.WriteLine("You do not have enough money to make that purchase.");
+                        UserInterface.NotEnoughMoney(sugarCube.name);
                     }
                     break;
                 case "3":
-                    if (wallet.Money >= (pricePerIceCube * bulkQty))
+                    IceCube iceCube = new IceCube();
+                    if (player.wallet.Money >= (pricePerIceCube * bulkQty))
                     {
-                        UserInterface.BuyItem(bulkQty, player.inventory.iceCubes[0].name);
-                        wallet.Money -= (pricePerIceCube * bulkQty);
-                        IceCube icecube = new IceCube();
+                        UserInterface.BuyItem(bulkQty, iceCube.name);
+                        player.wallet.Money -= (pricePerIceCube * bulkQty);                        
                         for (int i = 0; i < bulkQty; i++)
                         {
-                            player.inventory.iceCubes.Add(icecube);
+                            player.inventory.iceCubes.Add(iceCube);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("You do not have enough money to make that purchase.");
+                        UserInterface.NotEnoughMoney(iceCube.name);
                     }
                     break;
                 case "4":
-                    if (wallet.Money >= (pricePerCup * bulkQty))
+                    Cup cup = new Cup();
+                    if (player.wallet.Money >= (pricePerCup * bulkQty))
                     {
-                        UserInterface.BuyItem(bulkQty, player.inventory.cups[0].name);
-                        wallet.Money -= (pricePerCup * bulkQty);
-                        Cup cup = new Cup();
+                        UserInterface.BuyItem(bulkQty, cup.name);
+                        player.wallet.Money -= (pricePerCup * bulkQty);                        
                         for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.cups.Add(cup);
@@ -160,11 +167,12 @@ namespace Lemonade
                     }
                     else
                     {
-                        Console.WriteLine("You do not have enough money to make that purchase.");
+                        UserInterface.NotEnoughMoney(cup.name);
                     }
                     break;
                 default:
                     Console.WriteLine("You did not choose a valid option. Please choose again.");
+                    BuyItems(player);
                     break;
             }
         }
