@@ -34,15 +34,15 @@ namespace Lemonade
                 {
                     for (int i = 0; i < recipe.amountOfLemons; i++)
                     {
-                        inventory.lemons.Remove(new Lemon());
+                        inventory.lemons.Remove(inventory.lemons[0]);
                     }
                     for (int i = 0; i < recipe.amountOfSugarCubes; i++)
                     {
-                        inventory.sugarCubes.Remove(new SugarCube());
+                        inventory.sugarCubes.Remove(inventory.sugarCubes[0]);
                     }
                     for (int i = 0; i < recipe.amountOfIceCubes; i++)
                     {
-                        inventory.iceCubes.Remove(new IceCube());
+                        inventory.iceCubes.Remove(inventory.iceCubes[0]);
                     }
                     if(inventory.cups.Count < 12)
                     {
@@ -62,7 +62,7 @@ namespace Lemonade
         public void SellCup()
         {
                 pitcher.cupsLeftInPitcher--;
-                inventory.cups.Remove(new Cup());
+                inventory.cups.Remove(inventory.cups[-1]);
                 wallet.Money += recipe.pricePerCup;
         }
     }
