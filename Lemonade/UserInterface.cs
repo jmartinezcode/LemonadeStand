@@ -65,5 +65,26 @@ namespace Lemonade
             Console.WriteLine("Welcome to the Store\n===================\n");
             Console.WriteLine("1. Buy 5 Lemons     Lemon Inventory: {0}");
         }
+
+        public static void PlayAgainPrompt()
+        {
+            string playAgain;
+            do
+            {
+                Console.WriteLine("Would you like to play again? (y or n)");
+                playAgain = Console.ReadLine();
+            } while (playAgain != "y" && playAgain != "n");
+            if (playAgain == "y")
+            {
+                Console.WriteLine("Great! Let's play again!");
+                // Reset game here
+                // CheckCurrentDay();
+                // GameOver();
+            }
+            else
+            {
+                Console.WriteLine("See you next time!");
+            }
+        }
     }
 }

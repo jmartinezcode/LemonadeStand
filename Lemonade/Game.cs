@@ -16,8 +16,7 @@ namespace Lemonade
         public Random random;
 
         int currentDay;
-        int gameLength;
-
+        
         //Constructor
         public Game()
         {
@@ -27,10 +26,9 @@ namespace Lemonade
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
             SetGameLength(input);
-            RunGame();
+            CheckCurrentDay();
         }
-        //Member Methods (CAN DO)    
-        
+        //Member Methods (CAN DO)            
 
         public void SetGameLength(string gameLength)
         {            
@@ -65,8 +63,18 @@ namespace Lemonade
         }
         public void RunGame()
         {
-            // Runs Game
+            // Runs Game            
+            Console.WriteLine(days.Count);
+            Console.ReadLine();
             UserInterface.DisplayGameOver();
+        }
+
+        public void CheckCurrentDay()
+        {
+            do
+            {
+                RunGame();
+            } while (player.wallet.Money != 0 && currentDay < days.Count);
         }
 
 
