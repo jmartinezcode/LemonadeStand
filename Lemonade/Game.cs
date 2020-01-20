@@ -65,6 +65,7 @@ namespace Lemonade
         {
             // Runs Game            
             Console.WriteLine(days.Count);
+            UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money);
             Console.ReadLine();
             UserInterface.DisplayGameOver();
         }

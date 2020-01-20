@@ -18,9 +18,11 @@ namespace Lemonade
         //Constructor
         public Player()
         {
-            pitcher = new Pitcher();
+            name = "Player 1";
+            wallet = new Wallet();
             inventory = new Inventory();
             recipe = new Recipe();
+            pitcher = new Pitcher();            
         }
 
         //Member Methods (CAN DO)

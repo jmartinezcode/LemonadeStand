@@ -10,15 +10,16 @@ namespace Lemonade
     {
         public string name;
         Random random;      
-        public Customer()
+        public Customer(string name)
         {
-            
+            this.name = name;
         }
         // TO DO
         // Implement a price factor, weather and heat factor
         // The price of product as well as weather/temperature should affect demand, 
         // so that if the price is too high, sales will decrease, or if the price is too low, 
         // sales will increase, etc.
+
 
         public void ProbabilityToPurchase(Weather weather, Player player)
         {
