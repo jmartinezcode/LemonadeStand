@@ -186,6 +186,11 @@ namespace Lemonade
                         UserInterface.NotEnoughMoney(cup.name);
                     }
                     break;
+                case "5":
+                    UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+                         player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count, player.recipe.amountOfIceCubes,
+                         player.inventory.iceCubes.Count, player.recipe.pricePerCup);
+                    break;
                 default:
                     {
                         UserInterface.NotAValidOption();

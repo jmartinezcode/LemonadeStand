@@ -16,6 +16,7 @@ namespace Lemonade
         Lemon lemon;
         SugarCube sugarCube;
         IceCube iceCube;
+        Player player;
 
         //Constructor
         public void AddLemons(Inventory inventory)
@@ -91,6 +92,11 @@ namespace Lemonade
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                          amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                          inventory.iceCubes.Count, pricePerCup);
+                case "5":
+                    break;
+                case "6":
+                    Store store = new Store();
+                    //UserInterface.DisplayStore(store.bulkLemonPrice, inventory.lemons.Count, store.bulkSugarPrice, inventory.sugarCubes.Count, store.bulkIcePrice, inventory.iceCubes.Count, store.bulkCupPrice, inventory.cups.Count, player.wallet.Money,);
                     break;
             }
         }
