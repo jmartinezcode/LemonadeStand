@@ -50,6 +50,7 @@ namespace Lemonade
             Console.WriteLine("How much would you like to charge per cup?");
             pricePerCup = Int32.Parse(Console.ReadLine());
         }
+<<<<<<< HEAD
         public void AddItems(Inventory inventory)
         {
             string userinput = Console.ReadLine();
@@ -97,5 +98,8 @@ namespace Lemonade
                     break;
             }
         }
+=======
+        
+>>>>>>> 05fe2360b6b42a51921bfaff0c413a96a5a4a474
     }
 }

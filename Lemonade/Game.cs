@@ -72,7 +72,7 @@ namespace Lemonade
             //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
             //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
             //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
-
+            
             Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
@@ -91,9 +91,25 @@ namespace Lemonade
                 {
                     UserInterface.DisplayGameOver();
                     break;
-                }                
-                currentDay++;               
+                }
+                currentDay++;
             } while (player.wallet.Money != 0 && currentDay <= days.Count);
         }
+        public void RunDay()
+        {
+            // Potentially sell to each customer
+            double salesPrice = player.recipe.pricePerCup;
+            int cupsSold = 0;
+            foreach (Customer customer in day.customers)
+            {
+                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0)
+                {
+                    player.SellCup();
+                    cupsSold++;
+                }
+            }
+            Console.WriteLine("You sold {0} cups of lemonade!", cupsSold); //for testing, move to UI
+            Console.WriteLine("You now have {0}", player.wallet.Money); //for testing, move to UI
+        }        
     }
 }
