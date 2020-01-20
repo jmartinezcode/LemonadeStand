@@ -11,8 +11,12 @@ namespace Lemonade
         //Member Variables (HAS A)
         Player player;
         List<Day> days;
-        int currentDay;
+        Day day;
+        
         public Random random;
+
+        int currentDay;
+        int gameLength;
 
         //Constructor
         public Game()
@@ -21,13 +25,39 @@ namespace Lemonade
             player = new Player();
             days = new List<Day>();
             UserInterface.DisplayWelcomeMessage();
-            SelectGameLength();
-            UserInterface.DisplayGameOver();
+            string input = UserInterface.SelectGameLength();
+            SetGameLength(input);
+            RunGame();
         }
         //Member Methods (CAN DO)    
-        public void SelectGameLength()
-        {
-            Console.WriteLine("Select how many days to play:\n=============================\n1.   7 Days\n2.  14 Days\n3.  30 Days");
+        
+
+        public void SetGameLength(string gameLength)
+        {            
+            if (gameLength == "1") // 7 day game
+            {
+                UserInterface.DisplayGameLength("7"); 
+                for (int i = 0; i < 7; i++)
+                {
+                    days.Add(day);
+                }                
+            }
+            else if (gameLength == "2") // 14 day game
+            {
+                UserInterface.DisplayGameLength("14"); 
+                for (int i = 0; i < 14; i++)
+                {
+                    days.Add(day);
+                }
+            }
+            else // 30 day game
+            {                
+                UserInterface.DisplayGameLength("30"); 
+                for (int i = 0; i < 30; i++)
+                {
+                    days.Add(day);
+                }
+            }
         }
 
         public void SellCup()
@@ -36,6 +66,7 @@ namespace Lemonade
         public void RunGame()
         {
             // Runs Game
+            UserInterface.DisplayGameOver();
         }
 
 
