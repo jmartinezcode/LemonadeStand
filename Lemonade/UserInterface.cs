@@ -39,7 +39,21 @@ namespace Lemonade
             Console.ReadLine();
             Console.Clear();
         }
-        
+        public static string SelectGameLength()
+        {
+            Console.WriteLine("Select how many days to play:\n=============================\n1.   7 Days\n2.  14 Days\n3.  30 Days");
+            string gameLength;
+            do
+            {
+                Console.WriteLine("Please enter 1, 2 or 3");
+                gameLength = Console.ReadLine();
+            } while (gameLength != "1" && gameLength != "2" && gameLength != "3");
+            return gameLength;
+        }
+        public static void DisplayGameLength(string numberDays)
+        {
+            Console.WriteLine("You've chosen to play for {0} days!", numberDays);
+        }
         public static void DisplayGameStatus()
         {
             // Displays Game's Status 

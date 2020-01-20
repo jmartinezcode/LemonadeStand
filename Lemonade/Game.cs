@@ -21,9 +21,15 @@ namespace Lemonade
             player = new Player();
             days = new List<Day>();
             UserInterface.DisplayWelcomeMessage();
+            SelectGameLength();
             UserInterface.DisplayGameOver();
         }
-        //Member Methods (CAN DO)     
+        //Member Methods (CAN DO)    
+        public void SelectGameLength()
+        {
+            Console.WriteLine("Select how many days to play:\n=============================\n1.   7 Days\n2.  14 Days\n3.  30 Days");
+        }
+
         public void SellCup()
         {
         }
@@ -31,6 +37,7 @@ namespace Lemonade
         {
             // Runs Game
         }
+
 
 
     }
