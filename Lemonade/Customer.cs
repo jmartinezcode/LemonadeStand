@@ -12,6 +12,7 @@ namespace Lemonade
         Random random;      
         public Customer(string name)
         {
+            random = new Random();
             this.name = name;
         }
         // TO DO
@@ -19,8 +20,7 @@ namespace Lemonade
         // The price of product as well as weather/temperature should affect demand, 
         // so that if the price is too high, sales will decrease, or if the price is too low, 
         // sales will increase, etc.
-
-
+        
         public void ProbabilityToPurchase(Weather weather, Player player)
         {
             int randomBuy;
@@ -55,20 +55,6 @@ namespace Lemonade
             }
         }
 
-        //public string RandomCustomerName()
-        //{
-        //    //choose random name from list
-        //    List<string> nameslist = new List<string>() { "eva", "lorine", "carolee", "juan", "parthenia", "cory",
-        //                                                  "dung", "larisa", "cyndi", "rubye", "aja", "jerrold",
-        //                                                  "johnette", "april", "criselda", "tressa", "theressa",
-        //                                                  "isidro", "renata", "danyell", "perry", "fe", "jeremy",
-        //                                                  "dionne", "dessie",  "toby", "christiana", "stanton", "leona",
-        //                                                  "barabara", "buddy", "lynn", "freddy", "numbers", "mae",
-        //                                                  "isela", "macy", "alessandra", "sondra", "ashlyn", "jacinda",
-        //                                                  "erick", "maryanna", "thora", "junita", "lizeth", "alena",
-        //                                                  "mandy", "lisbeth", "wendi" };
-        //    return name = nameslist[random.Next(nameslist.Count)];
-        //}
         public void CalculatePriceFactor(Recipe recipe, Player player)
         {
             int randomBuy;
