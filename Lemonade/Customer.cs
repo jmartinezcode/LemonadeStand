@@ -59,6 +59,15 @@ namespace Lemonade
             }
         }
 
+        // Need to implement price and weather factor
+        public void PriceFactor(Recipe recipe)
+        {
+            double priceFactor = (100 - recipe.pricePerCup) / 100.0; // 1% less demand for each cent increase in price
+        }
+        public void HeatFactor(Weather weather)
+        {
+            double heatFactor = 1 - (100 - weather.temperature) * 2 / 100.0; // 2% more demand for every degree above 50
+        }
         public void CalculatePriceFactor(Recipe recipe, Player player)
         {
             int randomBuy;
