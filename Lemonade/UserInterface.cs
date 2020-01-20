@@ -113,5 +113,9 @@ namespace Lemonade
                 Console.WriteLine("See you next time!");
             }
         }
+        public static void BuyItem(int itemCount, string itemName)
+        {
+            Console.WriteLine("You bought {0} {1}s!", itemCount, itemName);
+        }
     }
 }

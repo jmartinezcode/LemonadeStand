@@ -69,17 +69,18 @@ namespace Lemonade
                                        store.bulkIcePrice, player.inventory.iceCubes.Count, 
                                        store.bulkCupPrice, player.inventory.cups.Count, 
                                        player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);
-            UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-                                        player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
-                                        player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
-            Console.WriteLine("There are {0} customers today", days[currentDay -1].customers.Count); // This is for testing only, To be removed
+            //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+            //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
+            //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
+
+            Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
         public void CheckCurrentDay()
         {
             do
             {
-                player.inventory.iceCubes.Clear();                
+                player.inventory.iceCubes.Clear(); // removes all ice each day               
                 Console.Clear();
                 RunGame();
                 try
