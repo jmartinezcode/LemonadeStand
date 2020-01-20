@@ -21,6 +21,7 @@ namespace Lemonade
             player = new Player();
             days = new List<Day>();
             UserInterface.DisplayWelcomeMessage();
+            UserInterface.DisplayGameOver();
         }
         //Member Methods (CAN DO)     
         public void SellCup()
