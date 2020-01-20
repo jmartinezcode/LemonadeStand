@@ -69,13 +69,13 @@ namespace Lemonade
             // Runs Game            
             UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  //commented out to determine why day is null.
             Console.ReadLine();
-            // UserInterface.DisplayGameOver();
         }
         public void CheckCurrentDay()
         {
             do
             {
                 Console.ReadLine();
+                Console.Clear();
                 RunGame();
                 try
                 {
@@ -83,7 +83,7 @@ namespace Lemonade
                 }
                 catch (Exception)
                 {
-
+                    UserInterface.DisplayGameOver();
                     break;
                 }                
                 currentDay++;               

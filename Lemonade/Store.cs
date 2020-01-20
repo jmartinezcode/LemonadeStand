@@ -15,7 +15,6 @@ namespace Lemonade
         double pricePerCup;
         Random random;
         Wallet wallet;
-        UserInterface;
 
         //Constructor
         public Store()
