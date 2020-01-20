@@ -79,14 +79,16 @@ namespace Lemonade
         }
         public static void DisplayRecipe(int lemonRecipe, int lemonCount,
                                          int sugarRecipe, int sugarCount,
-                                         int iceRecipe, int iceCount)
+                                         int iceRecipe, int iceCount,
+                                         double cupPrice)
         {
             Console.WriteLine("Your Award Winning Recipe \n=================================================\n");
             Console.WriteLine("1. Lemons per Pitcher:       {0}   Lemon Inventory: {1}", lemonRecipe, lemonCount);
             Console.WriteLine("2. Sugar Cubes per Pitcher:  {0}   Sugar Inventory: {1}", sugarRecipe, sugarCount);
             Console.WriteLine("3. Ice Cubes per Pitcher:    {0}   Ice   Inventory: {1}", iceRecipe, iceCount);
-            Console.WriteLine("4. Begin Round!");
-            Console.WriteLine("5. Go to the Store");
+            Console.WriteLine("4. Price Per Cup:            {0}", cupPrice);
+            Console.WriteLine("5. Begin Round!");
+            Console.WriteLine("6. Go to the Store");
             Console.WriteLine("Enter the number of the ingredient you would like to change (1-3)");
         }
         public static void DisplayForecast(string forecast)
@@ -128,6 +130,14 @@ namespace Lemonade
         public static void BuyItem(int itemCount, string itemName)
         {
             Console.WriteLine("You bought {0} {1}s!", itemCount, itemName);
+        }
+        public static void NotAValidOption()
+        {
+            Console.WriteLine("You did not choose a valid option. Please choose again.");
+        }
+        public static void AddItemsToRecipe(string itemName)
+        {
+            Console.WriteLine($"How many {itemName}s would you like to add to the recipe?");
         }
     }
 }
