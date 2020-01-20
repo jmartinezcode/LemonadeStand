@@ -13,39 +13,43 @@ namespace Lemonade
         public int amountOfSugarCubes;
         public int amountOfIceCubes;
         public double pricePerCup;
+        Lemon lemon;
+        SugarCube sugarCube;
+        IceCube iceCube;
 
         //Constructor
         public void AddLemons(Inventory inventory)
         {
-            Console.WriteLine("How many lemons do you want to add?");
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
-                Console.WriteLine("You do not have enough lemons");
+                UserInterface.NotenoughInventory(lemon.name);
             }
+            UserInterface.AdjustingRecipe(amountOfLemons, lemon.name);
         }
         public void AddSugar(Inventory inventory)
         {
-            Console.WriteLine("How many sugar cubes do you want to add?");
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
-                Console.WriteLine("You do not have enough sugar cubes.");
+                UserInterface.NotenoughInventory(sugarCube.name);
             }
+            UserInterface.AdjustingRecipe(amountOfSugarCubes, sugarCube.name);
         }
         public void AddIce(Inventory inventory)
         {
-            Console.WriteLine("How many ice cubes do you want to add?");
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
             {
-                Console.WriteLine("You do not have enough ice cubes");
+                UserInterface.NotenoughInventory(iceCube.name);
             }
+            UserInterface.AdjustingRecipe(amountOfIceCubes, iceCube.name);
         }
         public void CupPrice()
         {
             Console.WriteLine("How much would you like to charge per cup?");
             pricePerCup = Int32.Parse(Console.ReadLine());
+        }
         }
     }
 }
