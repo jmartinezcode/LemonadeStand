@@ -62,17 +62,21 @@ namespace Lemonade
             Console.WriteLine("You have...");
         }
 
-        public static void DisplayStore(int lemonCount, int sugarCount, int iceCount, int cupCount, double moneyCount, int dayCount)
+        public static void DisplayStore(int lemonCount, int sugarCount, int iceCount, int cupCount, double moneyCount, int dayCount, string forecast)
         {
             Console.WriteLine("Welcome to the Store Day {0}\n=================================================\n", dayCount);
-            Console.WriteLine("You currently have: ${0}\n", moneyCount);
+            Console.WriteLine("You currently have: ${0}", moneyCount);
+            DisplayForecast(forecast);
             Console.WriteLine("1. Buy 5 Lemons            Lemon Inventory: {0}", lemonCount);
             Console.WriteLine("2. Buy 5 Sugar Cubes       Sugar Inventory: {0}", sugarCount);
             Console.WriteLine("3. Buy 5 Ice Cubes         Ice   Inventory: {0}", iceCount);
             Console.WriteLine("4. Buy 5 Cups              Cup   Inventory: {0}", cupCount);
             Console.WriteLine("5. Exit Store");
         }
-
+        public static void DisplayForecast(string forecast)
+        {
+            Console.WriteLine("Today's Weather is predicted to be: {0}\n", forecast);
+        }
         public static void PlayAgainPrompt()
         {
             string playAgain;

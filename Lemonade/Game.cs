@@ -23,6 +23,7 @@ namespace Lemonade
             random = new Random();
             player = new Player();
             days = new List<Day>();
+            day = new Day();
             currentDay = 1;
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
@@ -38,6 +39,7 @@ namespace Lemonade
                 UserInterface.DisplayGameLength("7"); 
                 for (int i = 0; i < 7; i++)
                 {
+                    day = new Day();
                     days.Add(day);
                 }                
             }
@@ -65,22 +67,27 @@ namespace Lemonade
         public void RunGame()
         {
             // Runs Game            
-            UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money, currentDay);
+            UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  //commented out to determine why day is null.
             Console.ReadLine();
             // UserInterface.DisplayGameOver();
         }
-
         public void CheckCurrentDay()
         {
             do
             {
                 Console.ReadLine();
                 RunGame();
-                currentDay++;
+                try
+                {
+                    days[currentDay] = new Day();
+                }
+                catch (Exception)
+                {
+
+                    break;
+                }                
+                currentDay++;               
             } while (player.wallet.Money != 0 && currentDay <= days.Count);
         }
-
-
-
     }
 }

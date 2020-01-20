@@ -37,6 +37,7 @@ namespace Lemonade
             // Takes output from SetCondition and SetTemperature to output predictedForecast
             int temperatureVariance = random.Next(-7, 8);
             predictedForecast = (temperature + temperatureVariance) + " degrees and " + condition;
+
         }
 
 
