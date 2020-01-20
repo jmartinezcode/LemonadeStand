@@ -52,7 +52,9 @@ namespace Lemonade
         }
         public static void DisplayGameLength(string numberDays)
         {
-            Console.WriteLine("You've chosen to play for {0} days!", numberDays);
+            Console.Clear();
+            Console.WriteLine("You've chosen to play for {0} days!\nPress enter to continue.", numberDays);
+            Console.Read();
         }
         public static void DisplayGameStatus()
         {
@@ -60,9 +62,9 @@ namespace Lemonade
             Console.WriteLine("You have...");
         }
 
-        public static void DisplayStore(int lemonCount, int sugarCount, int iceCount, int cupCount, double moneyCount)
+        public static void DisplayStore(int lemonCount, int sugarCount, int iceCount, int cupCount, double moneyCount, int dayCount)
         {
-            Console.WriteLine("Welcome to the Store\n=================================================\n");
+            Console.WriteLine("Welcome to the Store Day {0}\n=================================================\n", dayCount);
             Console.WriteLine("You currently have: ${0}\n", moneyCount);
             Console.WriteLine("1. Buy 5 Lemons            Lemon Inventory: {0}", lemonCount);
             Console.WriteLine("2. Buy 5 Sugar Cubes       Sugar Inventory: {0}", sugarCount);
