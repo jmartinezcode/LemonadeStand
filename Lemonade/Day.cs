@@ -16,11 +16,14 @@ namespace Lemonade
         {
             weather = new Weather();
             customers = new List<Customer>();
+            NumberOfGeneratedCustomers();
+            GenerateCustomers();
         }
 
         public void NumberOfGeneratedCustomers()
         {
             // Number of customers varies on weather:
+            random = new Random();
             switch (weather.condition)
             {
                 case "Rain":

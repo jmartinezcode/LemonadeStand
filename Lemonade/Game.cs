@@ -68,6 +68,7 @@ namespace Lemonade
         {
             // Runs Game            
             UserInterface.DisplayStore(player.inventory.lemons.Count, player.inventory.sugarCubes.Count, player.inventory.iceCubes.Count, player.inventory.cups.Count, player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  //commented out to determine why day is null.
+            Console.WriteLine("There are {0} customers today", days[currentDay -1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
         public void CheckCurrentDay()
