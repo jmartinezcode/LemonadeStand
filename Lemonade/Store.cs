@@ -15,6 +15,7 @@ namespace Lemonade
         double pricePerCup;
         Random random;
         Wallet wallet;
+        int bulkQty;
 
         public double bulkLemonPrice;
         public double bulkSugarPrice;
@@ -28,7 +29,7 @@ namespace Lemonade
             // Set random prices of each item
 
             random = new Random();
-            int bulkQty = 5;
+            bulkQty = 5;
 
             pricePerLemon = random.Next(95, 105) / 100.0; 
             pricePerSugarCube = random.Next(3, 10) / 100.0;
@@ -99,12 +100,12 @@ namespace Lemonade
             switch (userinput)
             {
                 case "1":
-                    if (wallet.Money > (pricePerLemon * 5))
+                    if (wallet.Money >= (pricePerLemon * bulkQty))
                     {
-                        Console.WriteLine("You bought 5 lemons.");
-                        wallet.Money -= (pricePerLemon * 5);
+                        UserInterface.BuyItem(bulkQty, player.inventory.lemons[0].name);
+                        wallet.Money -= (pricePerLemon * bulkQty);
                         Lemon lemon = new Lemon();
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.lemons.Add(lemon);
                         }
@@ -115,12 +116,12 @@ namespace Lemonade
                     }
                     break;
                 case "2":
-                    if (wallet.Money > (pricePerSugarCube * 5))
+                    if (wallet.Money >= (pricePerSugarCube * bulkQty))
                     {
-                        Console.WriteLine("You bought 5 sugar cubes.");
-                        wallet.Money -= (pricePerSugarCube * 5);
+                        UserInterface.BuyItem(bulkQty, player.inventory.sugarCubes[0].name);
+                        wallet.Money -= (pricePerSugarCube * bulkQty);
                         SugarCube sugarCube = new SugarCube();
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.sugarCubes.Add(sugarCube);
                         }
@@ -131,12 +132,12 @@ namespace Lemonade
                     }
                     break;
                 case "3":
-                    if (wallet.Money > (pricePerIceCube * 5))
+                    if (wallet.Money >= (pricePerIceCube * bulkQty))
                     {
-                        Console.WriteLine("You bought 5 ice cubes.");
-                        wallet.Money -= (pricePerIceCube * 5);
+                        UserInterface.BuyItem(bulkQty, player.inventory.iceCubes[0].name);
+                        wallet.Money -= (pricePerIceCube * bulkQty);
                         IceCube icecube = new IceCube();
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.iceCubes.Add(icecube);
                         }
@@ -147,12 +148,12 @@ namespace Lemonade
                     }
                     break;
                 case "4":
-                    if (wallet.Money > (pricePerCup * 5))
+                    if (wallet.Money >= (pricePerCup * bulkQty))
                     {
-                        Console.WriteLine("You bought 5 cups.");
-                        wallet.Money -= (pricePerCup * 5);
+                        UserInterface.BuyItem(bulkQty, player.inventory.cups[0].name);
+                        wallet.Money -= (pricePerCup * bulkQty);
                         Cup cup = new Cup();
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < bulkQty; i++)
                         {
                             player.inventory.cups.Add(cup);
                         }

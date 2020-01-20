@@ -14,6 +14,8 @@ namespace Lemonade
         Random random;
         public Day()
         {
+
+            random = new Random(); 
             weather = new Weather();
             customers = new List<Customer>();
             NumberOfGeneratedCustomers();
@@ -22,8 +24,7 @@ namespace Lemonade
 
         public void NumberOfGeneratedCustomers()
         {
-            // Number of customers varies on weather:
-            random = new Random();
+            // Number of customers varies on weather:            
             switch (weather.condition)
             {
                 case "Rain":
@@ -46,6 +47,8 @@ namespace Lemonade
             for (int i = 0; i < numberOfCustomers; i++)
             {
                 Customer customer = new Customer("Customer"); 
+                customer.maxPrice = random.Next(36) / 100.0;
+                customer.chanceToBuy = random.Next(2);
                 customers.Add(customer);
             }
         }

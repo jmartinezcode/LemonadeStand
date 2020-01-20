@@ -26,11 +26,11 @@ namespace Lemonade
             days = new List<Day>();
             day = new Day();
             store = new Store();
-
             currentDay = 1;
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
-
+            SetGameLength(input);
+            CheckCurrentDay();
         }
         //Member Methods (CAN DO)            
 
@@ -41,7 +41,6 @@ namespace Lemonade
                 UserInterface.DisplayGameLength("7"); 
                 for (int i = 0; i < 7; i++)
                 {
-                    day = new Day();
                     days.Add(day);
                 }                
             }
@@ -69,16 +68,19 @@ namespace Lemonade
                                        store.bulkSugarPrice, player.inventory.sugarCubes.Count, 
                                        store.bulkIcePrice, player.inventory.iceCubes.Count, 
                                        store.bulkCupPrice, player.inventory.cups.Count, 
-                                       player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);  
-            Console.WriteLine("There are {0} customers today", days[currentDay -1].customers.Count); // This is for testing only, To be removed
+                                       player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);
+            //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+            //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
+            //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
+
+            Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
         public void CheckCurrentDay()
         {
             do
             {
-                player.inventory.iceCubes.Clear();
-                Console.ReadLine();
+                player.inventory.iceCubes.Clear(); // removes all ice each day               
                 Console.Clear();
                 RunGame();
                 try
