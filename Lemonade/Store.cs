@@ -44,7 +44,6 @@ namespace Lemonade
         //Member Methods (CAN DO)
         public void BuyLemons(Player player)
         {
-            Console.WriteLine("How many lemons would you like to buy?");
             int lemonsBought = Int32.Parse(Console.ReadLine());
             Lemon lemon = new Lemon();
             if (wallet.Money > pricePerLemon)
@@ -58,7 +57,6 @@ namespace Lemonade
         }
         public void BuySugarCubes(Player player)
         {
-            Console.WriteLine("How many lemons would you like to buy?");
             int sugarCubesBought = Int32.Parse(Console.ReadLine());
             SugarCube sugarCube = new SugarCube();
             if (wallet.Money > pricePerSugarCube)
@@ -72,7 +70,6 @@ namespace Lemonade
         }
         public void BuyIceCubes(Player player)
         {
-            Console.WriteLine("How many lemons would you like to buy?");
             int iceCubesBought = Int32.Parse(Console.ReadLine());
             IceCube iceCube = new IceCube();
             if (wallet.Money > pricePerIceCube)
@@ -85,8 +82,7 @@ namespace Lemonade
             }
         }
         public void BuyCups(Player player)
-        {
-            Console.WriteLine("How many lemons would you like to buy?");
+        {;
             int cupsBought = Int32.Parse(Console.ReadLine());
             Cup cup = new Cup();
             if (wallet.Money > pricePerCup)

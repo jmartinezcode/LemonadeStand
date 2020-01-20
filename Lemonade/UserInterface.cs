@@ -113,6 +113,18 @@ namespace Lemonade
                 Console.WriteLine("See you next time!");
             }
         }
+        public static void AdjustingRecipe(int itemCount, string itemName)
+        {
+            Console.WriteLine($"You added {itemCount} {itemName}s to the recipe.");
+        }
+        public static void NotEnoughMoney(string itemName)
+        {
+            Console.WriteLine($"You do not have enough funds to purchase {itemName}");
+        }
+        public static void NotenoughInventory(string itemName)
+        {
+            Console.WriteLine($"You do not have enough {itemName} in your inventory to add it to the recipe");
+        } 
         public static void BuyItem(int itemCount, string itemName)
         {
             Console.WriteLine("You bought {0} {1}s!", itemCount, itemName);
