@@ -30,7 +30,9 @@ namespace Lemonade
         {
             while(pitcher.cupsLeftInPitcher == 0)
             {
-                if(inventory.lemons.Count >= recipe.amountOfLemons && inventory.sugarCubes.Count >= recipe.amountOfSugarCubes && inventory.iceCubes.Count >= recipe.amountOfIceCubes)
+                if(inventory.lemons.Count >= recipe.amountOfLemons && 
+                    inventory.sugarCubes.Count >= recipe.amountOfSugarCubes && 
+                    inventory.iceCubes.Count >= recipe.amountOfIceCubes)
                 {
                     for (int i = 0; i < recipe.amountOfLemons; i++)
                     {

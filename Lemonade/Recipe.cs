@@ -25,7 +25,6 @@ namespace Lemonade
             {
                 UserInterface.NotenoughInventory(lemon.name);
             }
-            UserInterface.AdjustingRecipe(amountOfLemons, lemon.name);
         }
         public void AddSugar(Inventory inventory)
         {
@@ -34,7 +33,6 @@ namespace Lemonade
             {
                 UserInterface.NotenoughInventory(sugarCube.name);
             }
-            UserInterface.AdjustingRecipe(amountOfSugarCubes, sugarCube.name);
         }
         public void AddIce(Inventory inventory)
         {
@@ -43,14 +41,12 @@ namespace Lemonade
             {
                 UserInterface.NotenoughInventory(inventory.iceCubes[0].name);
             }
-            UserInterface.AdjustingRecipe(amountOfIceCubes, inventory.iceCubes[0].name);
         }
         public void CupPrice()
         {
             Console.WriteLine("How much would you like to charge per cup?");
             pricePerCup = Int32.Parse(Console.ReadLine());
         }
-<<<<<<< HEAD
         public void AddItems(Inventory inventory)
         {
             string userinput = Console.ReadLine();
@@ -91,15 +87,12 @@ namespace Lemonade
                     break;
                 case "4":
                     Console.WriteLine("How much would you like to charge per cup?");
-                    pricePerCup = Int32.Parse(Console.ReadLine());
+                    pricePerCup = Double.Parse(Console.ReadLine());
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                          amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                          inventory.iceCubes.Count, pricePerCup);
                     break;
             }
         }
-=======
-        
->>>>>>> 05fe2360b6b42a51921bfaff0c413a96a5a4a474
     }
 }
