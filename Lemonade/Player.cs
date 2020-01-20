@@ -59,7 +59,7 @@ namespace Lemonade
                 }
             }
         }
-        public void SellCup(Customer customer)
+        public void SellCup()
         {
                 pitcher.cupsLeftInPitcher--;
                 inventory.cups.Remove(new Cup());

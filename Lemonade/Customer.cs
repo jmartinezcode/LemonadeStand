@@ -23,36 +23,36 @@ namespace Lemonade
 
         public void ProbabilityToPurchase(Weather weather, Player player)
         {
-            //int randomBuy;
-            //randomBuy = random.Next(10);
-            //if(weather.temperature >= 90)
-            //{
-            //    if (randomBuy > 1) // 80% 
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (weather.temperature >= 80)
-            //{                
-            //    if (randomBuy > 3) // 60%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (weather.temperature >=70)
-            //{
-            //    if (randomBuy > 5) // 40%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else
-            //{
-            //    if (randomBuy > 7) // 20%
-            //    { 
-            //        player.SellCup();
-            //    }
-            //}
+            int randomBuy;
+            randomBuy = random.Next(10);
+            if (weather.temperature >= 90)
+            {
+                if (randomBuy > 1) // 80% 
+                {
+                    player.SellCup();
+                }
+            }
+            else if (weather.temperature >= 80)
+            {
+                if (randomBuy > 3) // 60%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (weather.temperature >= 70)
+            {
+                if (randomBuy > 5) // 40%
+                {
+                    player.SellCup();
+                }
+            }
+            else
+            {
+                if (randomBuy > 7) // 20%
+                {
+                    player.SellCup();
+                }
+            }
         }
 
         //public string RandomCustomerName()
@@ -73,73 +73,73 @@ namespace Lemonade
         {
             int randomBuy;
             randomBuy = random.Next(10);
-            //if (recipe.pricePerCup >= 1)
-            //{
-            //    if (randomBuy >= 9) // 10%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .9)
-            //{
-            //    if (randomBuy >= 8) // 20%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .8)
-            //{
-            //    if (randomBuy >= 7) // 30%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .7)
-            //{
-            //    if (randomBuy >= 6) // 40%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .6)
-            //{
-            //    if (randomBuy >= 5) // 50%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .5)
-            //{
-            //    if (randomBuy >= 4) // 60%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .4)
-            //{
-            //    if (randomBuy >= 3) // 70%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .3)
-            //{
-            //    if (randomBuy >= 2) // 80%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else if (recipe.pricePerCup >= .2)
-            //{
-            //    if (randomBuy >= 1) // 90%
-            //    {
-            //        player.SellCup();
-            //    }
-            //}
-            //else 
-            //{
-            //    player.SellCup();
-            //}
+            if (recipe.pricePerCup >= 1)
+            {
+                if (randomBuy >= 9) // 10%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .9)
+            {
+                if (randomBuy >= 8) // 20%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .8)
+            {
+                if (randomBuy >= 7) // 30%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .7)
+            {
+                if (randomBuy >= 6) // 40%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .6)
+            {
+                if (randomBuy >= 5) // 50%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .5)
+            {
+                if (randomBuy >= 4) // 60%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .4)
+            {
+                if (randomBuy >= 3) // 70%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .3)
+            {
+                if (randomBuy >= 2) // 80%
+                {
+                    player.SellCup();
+                }
+            }
+            else if (recipe.pricePerCup >= .2)
+            {
+                if (randomBuy >= 1) // 90%
+                {
+                    player.SellCup();
+                }
+            }
+            else
+            {
+                player.SellCup();
+            }
         }
     }
 }

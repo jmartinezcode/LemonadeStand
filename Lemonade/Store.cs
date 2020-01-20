@@ -15,6 +15,7 @@ namespace Lemonade
         double pricePerCup;
         Random random;
         Wallet wallet;
+        UserInterface;
 
         //Constructor
         public Store()
@@ -89,7 +90,7 @@ namespace Lemonade
             switch (userinput)
             {
                 case "1":
-                    if (wallet.Money > pricePerLemon)
+                    if (wallet.Money > (pricePerLemon * 5))
                     {
                         Console.WriteLine("You bought 5 lemons.");
                         wallet.Money -= (pricePerLemon * 5);
@@ -105,7 +106,7 @@ namespace Lemonade
                     }
                     break;
                 case "2":
-                    if (wallet.Money > pricePerSugarCube)
+                    if (wallet.Money > (pricePerSugarCube * 5))
                     {
                         Console.WriteLine("You bought 5 sugar cubes.");
                         wallet.Money -= (pricePerSugarCube * 5);
@@ -121,7 +122,7 @@ namespace Lemonade
                     }
                     break;
                 case "3":
-                    if (wallet.Money > pricePerIceCube)
+                    if (wallet.Money > (pricePerIceCube * 5))
                     {
                         Console.WriteLine("You bought 5 ice cubes.");
                         wallet.Money -= (pricePerIceCube * 5);
@@ -137,7 +138,7 @@ namespace Lemonade
                     }
                     break;
                 case "4":
-                    if (wallet.Money > pricePerCup)
+                    if (wallet.Money > (pricePerCup * 5))
                     {
                         Console.WriteLine("You bought 5 cups.");
                         wallet.Money -= (pricePerCup * 5);
@@ -151,6 +152,9 @@ namespace Lemonade
                     {
                         Console.WriteLine("You do not have enough money to make that purchase.");
                     }
+                    break;
+                default:
+                    Console.WriteLine("You did not choose a valid option. Please choose again.");
                     break;
             }
         }
