@@ -9,11 +9,15 @@ namespace Lemonade
     class Customer
     {
         public string name;
-        Random random;      
+        Random random;
+        public double maxPrice;
+        public double chanceToBuy;
         public Customer(string name)
         {
             random = new Random();
             this.name = name;
+            maxPrice = random.Next(36) / 100.0; //Max Price customer is willing to pay
+            chanceToBuy = random.Next(2);
         }
         // TO DO
         // Implement a price factor, weather and heat factor
