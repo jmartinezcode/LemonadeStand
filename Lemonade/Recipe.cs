@@ -13,10 +13,6 @@ namespace Lemonade
         public int amountOfSugarCubes;
         public int amountOfIceCubes;
         public double pricePerCup;
-        Lemon lemon;
-        SugarCube sugarCube;
-        IceCube iceCube;
-        Player player;
 
         //Constructor
         public void AddLemons(Inventory inventory)
@@ -26,8 +22,9 @@ namespace Lemonade
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
             {
-                UserInterface.NotEnoughInventory(lemon.name);
+                UserInterface.NotEnoughInventory(inventory.lemons[0].name);
             }
+            
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                         inventory.iceCubes.Count, pricePerCup);
@@ -39,7 +36,7 @@ namespace Lemonade
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
             {
-                UserInterface.NotEnoughInventory(sugarCube.name);
+                UserInterface.NotEnoughInventory(inventory.sugarCubes[0].name);
             }
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
@@ -52,7 +49,7 @@ namespace Lemonade
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
             {
-                UserInterface.NotEnoughInventory(iceCube.name);
+                UserInterface.NotEnoughInventory(inventory.iceCubes[0].name);
             }
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
