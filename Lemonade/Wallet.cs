@@ -22,6 +22,10 @@ namespace Lemonade
                 {
                     money = 0;
                 }
+                else
+                {
+                    money = value;
+                }
             }
         }
 
