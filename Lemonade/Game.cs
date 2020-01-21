@@ -13,6 +13,7 @@ namespace Lemonade
         List<Day> days;
         Day day;
         Store store;
+        Recipe recipe;
 
         public Random random;
 
@@ -111,6 +112,33 @@ namespace Lemonade
             }
             Console.WriteLine("You sold {0} cups of lemonade!", cupsSold); //for testing, move to UI
             Console.WriteLine("You now have {0}", player.wallet.Money); //for testing, move to UI
-        }        
-    }
+        }
+        public void AddItems()
+        {
+            string userinput = Console.ReadLine();
+            switch (userinput)
+            {
+                case "1":
+                    player.recipe.AddLemons(player.inventory);
+                    break;
+                case "2":
+                    player.recipe.AddSugar(player.inventory);
+                    break;
+                case "3":
+                    player.recipe.AddIce(player.inventory);
+                    break;
+                case "4":
+                    player.recipe.CupPrice(player.inventory);
+                    break;
+                case "5":
+                    RunDay();
+                    break;
+                case "6":
+                    UserInterface.DisplayStore(store.bulkLemonPrice,
+                        player.inventory.lemons.Count, store.bulkSugarPrice,
+                        player.inventory.sugarCubes.Count, store.bulkIcePrice,
+                        player.inventory.iceCubes.Count, store.bulkCupPrice,
+                        player.inventory.cups.Count, player.wallet.Money, currentDay, days[-1].weather.predictedForecast);
+                    break;
+            }
 }
