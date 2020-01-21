@@ -64,7 +64,7 @@ namespace Lemonade
             Console.WriteLine("You sold {0} cups of lemonade!", cupsSold);
             Console.WriteLine("There were {0} customers", customerCount);            
             Console.WriteLine("The predicted weather was {0}\nThe actual weather was {1} and {2}", predictedWeather, actualTemp, actualCondition);
-            Console.WriteLine("You now have {0}", moneyCount);
+            Console.WriteLine("You now have ${0}", moneyCount);
             Console.WriteLine("Your remaining ice has melted");
             Console.ReadLine();
         }
@@ -82,7 +82,7 @@ namespace Lemonade
             Console.WriteLine("1. Buy {0} Lemons       ${1}     Lemon Inventory: {2}", bulkQty, lemonPrice, lemonCount);
             Console.WriteLine("2. Buy {0} Sugar Cubes  ${1}     Sugar Inventory: {2}", bulkQty, sugarPrice, sugarCount);
             Console.WriteLine("3. Buy {0} Ice Cubes    ${1}     Ice   Inventory: {2}", bulkQty, icePrice, iceCount);
-            Console.WriteLine("4. Buy {0} Cups         ${1}     Cup   Inventory: {2}", bulkQty, cupPrice, cupCount);
+            Console.WriteLine("4. Buy {0} Cups         ${1}     Cup   Inventory: {2}\n", bulkQty, cupPrice, cupCount);
             Console.WriteLine("5. Exit Store");
         }
         public static void DisplayRecipe(int lemonRecipe, int lemonCount,

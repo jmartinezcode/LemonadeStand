@@ -14,14 +14,13 @@ namespace Lemonade
         double pricePerIceCube;
         double pricePerCup;
         Random random;
-        public int bulkQty;
 
+        public int bulkQty;
         public double bulkLemonPrice;
         public double bulkSugarPrice;
         public double bulkIcePrice;
         public double bulkCupPrice;
-
-
+        
         //Constructor
         public Store()
         {

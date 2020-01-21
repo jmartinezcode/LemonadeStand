@@ -92,7 +92,7 @@ namespace Lemonade
             int cupsSold = 0;
             foreach (Customer customer in day.customers)
             {
-                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0)
+                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0) // && player.inventory.cups.Count > 0)
                 {
                     player.SellCup();
                     cupsSold++;
@@ -100,6 +100,7 @@ namespace Lemonade
             }
             UserInterface.DisplayEndOfDayReport(currentDay, cupsSold, days[currentDay - 1].customers.Count,
                                                 player.wallet.Money, day.weather.predictedForecast, day.weather.temperature, day.weather.condition);
+            CheckCurrentDay();
         }
         public void AddItems()
         {
