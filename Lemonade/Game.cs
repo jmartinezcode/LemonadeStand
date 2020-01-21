@@ -18,7 +18,7 @@ namespace Lemonade
         public Random random;
 
         int currentDay;
-        
+
         //Constructor
         public Game()
         {
@@ -36,26 +36,26 @@ namespace Lemonade
         //Member Methods (CAN DO)            
 
         public void SetGameLength(string gameLength)
-        {            
+        {
             if (gameLength == "1") // 7 day game
             {
-                UserInterface.DisplayGameLength("7"); 
+                UserInterface.DisplayGameLength("7");
                 for (int i = 0; i < 7; i++)
                 {
                     days.Add(day);
-                }                
+                }
             }
             else if (gameLength == "2") // 14 day game
             {
-                UserInterface.DisplayGameLength("14"); 
+                UserInterface.DisplayGameLength("14");
                 for (int i = 0; i < 14; i++)
                 {
                     days.Add(day);
                 }
             }
             else // 30 day game
-            {                
-                UserInterface.DisplayGameLength("30"); 
+            {
+                UserInterface.DisplayGameLength("30");
                 for (int i = 0; i < 30; i++)
                 {
                     days.Add(day);
@@ -65,16 +65,16 @@ namespace Lemonade
         public void RunGame()
         {
             // Runs Game            
-            UserInterface.DisplayStore(store.bulkLemonPrice , player.inventory.lemons.Count, 
-                                       store.bulkSugarPrice, player.inventory.sugarCubes.Count, 
-                                       store.bulkIcePrice, player.inventory.iceCubes.Count, 
-                                       store.bulkCupPrice, player.inventory.cups.Count, 
-                                       player.wallet.Money, currentDay, days[currentDay-1].weather.predictedForecast);
+            UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count,
+                                       store.bulkSugarPrice, player.inventory.sugarCubes.Count,
+                                       store.bulkIcePrice, player.inventory.iceCubes.Count,
+                                       store.bulkCupPrice, player.inventory.cups.Count,
+                                       player.wallet.Money, currentDay, days[currentDay - 1].weather.predictedForecast);
             store.BuyItems(player);
             //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
             //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
             //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
-            
+
             Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
         }
@@ -141,4 +141,6 @@ namespace Lemonade
                         player.inventory.cups.Count, player.wallet.Money, currentDay, days[-1].weather.predictedForecast);
                     break;
             }
+        }
+    }
 }
