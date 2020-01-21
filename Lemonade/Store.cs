@@ -118,6 +118,7 @@ namespace Lemonade
             {
                 case "1":
                     BuyLemons(player);
+                    BuyItems(player);
                     break;
                 case "2":
                     BuySugarCubes(player);
