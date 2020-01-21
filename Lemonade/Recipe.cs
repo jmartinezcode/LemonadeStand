@@ -27,7 +27,7 @@ namespace Lemonade
             
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
-                        inventory.iceCubes.Count, pricePerCup);
+                        inventory.iceCubes.Count, pricePerCup, inventory.cups.Count);
         }
         public void AddSugar(Inventory inventory)
         {
@@ -40,7 +40,7 @@ namespace Lemonade
             }
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
-                        inventory.iceCubes.Count, pricePerCup);
+                        inventory.iceCubes.Count, pricePerCup, inventory.cups.Count);
         }
         public void AddIce(Inventory inventory)
         {
@@ -53,7 +53,7 @@ namespace Lemonade
             }
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
-                        inventory.iceCubes.Count, pricePerCup);
+                        inventory.iceCubes.Count, pricePerCup, inventory.cups.Count);
         }
         public void CupPrice(Inventory inventory)
         {
@@ -61,7 +61,7 @@ namespace Lemonade
             pricePerCup = Double.Parse(Console.ReadLine());
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
-                        inventory.iceCubes.Count, pricePerCup);
+                        inventory.iceCubes.Count, pricePerCup, inventory.cups.Count);
         }
     }
 }

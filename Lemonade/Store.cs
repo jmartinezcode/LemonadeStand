@@ -15,7 +15,7 @@ namespace Lemonade
         double pricePerCup;
         Random random;
         Wallet wallet;
-        int bulkQty;
+        public int bulkQty;
 
         public double bulkLemonPrice;
         public double bulkSugarPrice;
@@ -29,12 +29,12 @@ namespace Lemonade
             // Set random prices of each item
 
             random = new Random();
-            bulkQty = 5;
+            bulkQty = 10;
 
-            pricePerLemon = random.Next(15, 65) / 100.0; 
-            pricePerSugarCube = random.Next(3, 10) / 100.0;
-            pricePerIceCube = random.Next(2, 4) / 100.0;
-            pricePerCup = random.Next(3, 6) / 100.0;
+            pricePerLemon = random.Next(150, 340) / 1000.0; 
+            pricePerSugarCube = random.Next(15, 50) / 1000.0;
+            pricePerIceCube = random.Next(10, 40) / 1000.0;
+            pricePerCup = random.Next(10, 20) / 1000.0;
             bulkLemonPrice = Math.Round(bulkQty * pricePerLemon, 2);
             bulkSugarPrice = Math.Round(bulkQty * pricePerSugarCube, 2);
             bulkIcePrice = Math.Round(bulkQty * pricePerIceCube, 2);

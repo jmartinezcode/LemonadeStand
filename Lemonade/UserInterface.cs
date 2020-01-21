@@ -56,42 +56,49 @@ namespace Lemonade
             Console.WriteLine("You've chosen to play for {0} days!\nPress enter to continue.", numberDays);
             Console.Read();
         }
-        public static void DisplayGameStatus()
+        public static void DisplayEndOfDayReport(int dayCount, int cupsSold, int customerCount, double moneyCount, string predictedWeather, int actualTemp, string actualCondition)
         {
             // Displays Game's Status 
-            Console.WriteLine("You have...");
+            Console.Clear();
+            Console.WriteLine("\n\n\nHere is your Day {0} report\n=================================================\n", dayCount);
+            Console.WriteLine("You sold {0} cups of lemonade!", cupsSold);
+            Console.WriteLine("There were {0} customers", customerCount);            
+            Console.WriteLine("The predicted weather was {0}\nThe actual weather was {1} and {2}", predictedWeather, actualTemp, actualCondition);
+            Console.WriteLine("You now have {0}", moneyCount);
+            Console.WriteLine("Your remaining ice has melted");
+            Console.ReadLine();
         }
 
         public static void DisplayStore(double lemonPrice, int lemonCount, 
                                         double sugarPrice, int sugarCount, 
                                         double icePrice, int iceCount, 
                                         double cupPrice, int cupCount, 
-                                        double moneyCount, int dayCount, string forecast)
+                                        double moneyCount, int dayCount, string forecast, int bulkQty)
         {
             Console.Clear();
             Console.WriteLine("Welcome to the Store Day {0}\n=================================================\n", dayCount);
             Console.WriteLine("You currently have: ${0}", moneyCount);
             DisplayForecast(forecast);
-            Console.WriteLine("1. Buy 5 Lemons       ${0}     Lemon Inventory: {1}", lemonPrice, lemonCount);
-            Console.WriteLine("2. Buy 5 Sugar Cubes  ${0}     Sugar Inventory: {1}", sugarPrice, sugarCount);
-            Console.WriteLine("3. Buy 5 Ice Cubes    ${0}     Ice   Inventory: {1}", icePrice, iceCount);
-            Console.WriteLine("4. Buy 5 Cups         ${0}     Cup   Inventory: {1}", cupPrice, cupCount);
+            Console.WriteLine("1. Buy {0} Lemons       ${1}     Lemon Inventory: {2}", bulkQty, lemonPrice, lemonCount);
+            Console.WriteLine("2. Buy {0} Sugar Cubes  ${1}     Sugar Inventory: {2}", bulkQty, sugarPrice, sugarCount);
+            Console.WriteLine("3. Buy {0} Ice Cubes    ${1}     Ice   Inventory: {2}", bulkQty, icePrice, iceCount);
+            Console.WriteLine("4. Buy {0} Cups         ${1}     Cup   Inventory: {2}", bulkQty, cupPrice, cupCount);
             Console.WriteLine("5. Exit Store");
         }
         public static void DisplayRecipe(int lemonRecipe, int lemonCount,
                                          int sugarRecipe, int sugarCount,
                                          int iceRecipe, int iceCount,
-                                         double cupPrice)
+                                         double cupPrice, int cupCount)
         {
             Console.Clear();
             Console.WriteLine("Your Award Winning Recipe \n=================================================\n");
             Console.WriteLine("1. Lemons per Pitcher:       {0}   Lemon Inventory: {1}", lemonRecipe, lemonCount);
             Console.WriteLine("2. Sugar Cubes per Pitcher:  {0}   Sugar Inventory: {1}", sugarRecipe, sugarCount);
             Console.WriteLine("3. Ice Cubes per Pitcher:    {0}   Ice   Inventory: {1}", iceRecipe, iceCount);
-            Console.WriteLine("4. Price Per Cup:           ${0}", cupPrice);
+            Console.WriteLine("4. Price Per Cup:        ${0}   Cup   Inventory: {1}\n", cupPrice, cupCount);
             Console.WriteLine("5. Begin Round!");
             Console.WriteLine("6. Go to the Store");
-            Console.WriteLine("Enter the number of the ingredient you would like to change (1-3)");
+            Console.WriteLine("Enter the number for the item you would like to change (1-4)");
         }
         public static void DisplayForecast(string forecast)
         {

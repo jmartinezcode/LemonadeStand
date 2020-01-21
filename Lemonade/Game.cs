@@ -66,9 +66,6 @@ namespace Lemonade
         {
             BuyItems(player);
             AddItems();
-
-            Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
-            Console.ReadLine();
         }
         public void CheckCurrentDay()
         {
@@ -102,15 +99,15 @@ namespace Lemonade
                     cupsSold++;
                 }
             }
-            Console.WriteLine("You sold {0} cups of lemonade!", cupsSold); //for testing, move to UI
-            Console.WriteLine("You now have {0}", player.wallet.Money); //for testing, move to UI
+            UserInterface.DisplayEndOfDayReport(currentDay, cupsSold, days[currentDay - 1].customers.Count,
+                                                player.wallet.Money, day.weather.predictedForecast, day.weather.temperature, day.weather.condition);
         }
         public void AddItems()
         {
             UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
                                         player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
                                         player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count,
-                                        player.recipe.pricePerCup);
+                                        player.recipe.pricePerCup, player.inventory.cups.Count);
             string userinput = Console.ReadLine();
             switch (userinput)
             {
@@ -144,7 +141,7 @@ namespace Lemonade
             UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice,
                         player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count,
                         store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay,
-                        days[currentDay - 1].weather.predictedForecast);
+                        days[currentDay - 1].weather.predictedForecast, store.bulkQty);
             string userinput = Console.ReadLine();
             switch (userinput)
             {
