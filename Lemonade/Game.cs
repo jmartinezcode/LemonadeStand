@@ -71,9 +71,10 @@ namespace Lemonade
                                        store.bulkCupPrice, player.inventory.cups.Count,
                                        player.wallet.Money, currentDay, days[currentDay - 1].weather.predictedForecast);
             BuyItems(player);
-            //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-            //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
-            //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count);
+            UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+                                        player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
+                                        player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count, player.recipe.pricePerCup);
+            AddItems();
 
             Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
             Console.ReadLine();
@@ -120,15 +121,19 @@ namespace Lemonade
             {
                 case "1":
                     player.recipe.AddLemons(player.inventory);
+                    AddItems();
                     break;
                 case "2":
                     player.recipe.AddSugar(player.inventory);
+                    AddItems();
                     break;
                 case "3":
                     player.recipe.AddIce(player.inventory);
+                    AddItems();
                     break;
                 case "4":
                     player.recipe.CupPrice(player.inventory);
+                    AddItems();
                     break;
                 case "5":
                     RunDay();
