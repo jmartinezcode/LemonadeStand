@@ -47,8 +47,6 @@ namespace Lemonade
             for (int i = 0; i < numberOfCustomers; i++)
             {
                 Customer customer = new Customer("Customer"); 
-                customer.maxPrice = random.Next(36) / 100.0;
-                customer.chanceToBuy = 1;
                 customers.Add(customer);
             }
         }

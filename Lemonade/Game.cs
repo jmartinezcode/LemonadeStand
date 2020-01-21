@@ -17,6 +17,7 @@ namespace Lemonade
         public Random random;
 
         int currentDay;
+        double maxPrice;
 
         //Constructor
         public Game()
@@ -27,6 +28,7 @@ namespace Lemonade
             day = new Day();
             store = new Store();
             currentDay = 1;
+            maxPrice = 0.35;
             UserInterface.DisplayWelcomeMessage();
             string input = UserInterface.SelectGameLength();
             SetGameLength(input);
@@ -89,10 +91,12 @@ namespace Lemonade
             // Potentially sell to each customer
             double salesPrice = player.recipe.pricePerCup;
             int cupsSold = 0;
+            double chanceThreshold = 1.5;
             player.FillPitcher();
+            CalcCustomerChanceToBuy();
             foreach (Customer customer in day.customers)
             {
-                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0 && player.inventory.cups.Count > 0)
+                if (salesPrice <= customer.maxPrice && customer.chanceToBuy > chanceThreshold && player.inventory.cups.Count > 0)
                 {
                     player.SellCup();
                     cupsSold++;
@@ -172,6 +176,25 @@ namespace Lemonade
                         break;
                     }
             }
+        }
+        public void CalcCustomerChanceToBuy()
+        {
+            double chanceToBuy = PriceFactor() + HeatFactor();
+            foreach (Customer customer in day.customers)
+            {
+                customer.maxPrice = random.Next(36) / 100.0;
+                customer.chanceToBuy = random.NextDouble();
+
+                customer.chanceToBuy += chanceToBuy;
+            }
+        }
+        public double PriceFactor()
+        {
+            return (maxPrice - player.recipe.pricePerCup) / maxPrice; // 1% less demand for each cent increase in price
+        }
+        public double HeatFactor()
+        {
+            return 1 - (100 - days[currentDay - 1].weather.temperature) * 2 / 100.0; // 2% more demand for every degree above 50 0-1 should be .5 on average
         }
     }
 }
