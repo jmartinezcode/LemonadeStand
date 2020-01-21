@@ -103,6 +103,11 @@ namespace Lemonade
             currentDay++;
             CheckCurrentDay();
         }
+        //SOLID example below: Single Responsibiliy. The below AddItems method demonstrates our use of single
+        //responsibility because this switch case originally had the methods written out for each case within it.
+        //However we moved that logic to within their own methods so that this method was used more as an access point
+        //to other methods rather than executing the logic held within them.
+
         public void AddItems()
         {
             UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
