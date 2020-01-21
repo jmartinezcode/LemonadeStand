@@ -58,7 +58,7 @@ namespace Lemonade
         public void CupPrice(Inventory inventory)
         {
             Console.WriteLine("How much would you like to charge per cup?");
-            pricePerCup = Int32.Parse(Console.ReadLine());
+            pricePerCup = Double.Parse(Console.ReadLine());
             UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                         inventory.iceCubes.Count, pricePerCup);

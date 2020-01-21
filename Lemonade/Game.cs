@@ -65,16 +65,16 @@ namespace Lemonade
         public void RunGame()
         {
             // Runs Game            
-            UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count,
-                                       store.bulkSugarPrice, player.inventory.sugarCubes.Count,
-                                       store.bulkIcePrice, player.inventory.iceCubes.Count,
-                                       store.bulkCupPrice, player.inventory.cups.Count,
-                                       player.wallet.Money, currentDay, days[currentDay - 1].weather.predictedForecast);
+            //UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count,
+            //                           store.bulkSugarPrice, player.inventory.sugarCubes.Count,
+            //                           store.bulkIcePrice, player.inventory.iceCubes.Count,
+            //                           store.bulkCupPrice, player.inventory.cups.Count,
+            //                           player.wallet.Money, currentDay, days[currentDay - 1].weather.predictedForecast);
             BuyItems(player);
-            UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-                                        player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
-                                        player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count,
-                                        player.recipe.pricePerCup);
+            //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+            //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
+            //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count,
+            //                            player.recipe.pricePerCup);
             AddItems();
 
             Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
@@ -117,6 +117,10 @@ namespace Lemonade
         }
         public void AddItems()
         {
+            UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+                                        player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
+                                        player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count,
+                                        player.recipe.pricePerCup);
             string userinput = Console.ReadLine();
             switch (userinput)
             {
@@ -147,50 +151,39 @@ namespace Lemonade
 
         public void BuyItems(Player player)
         {
+            UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice,
+                        player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count,
+                        store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay,
+                        days[currentDay - 1].weather.predictedForecast);
             string userinput = Console.ReadLine();
             switch (userinput)
             {
                 case "1":
-                    store.BuyLemons(player);
-                    UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice, 
-                        player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count, 
-                        store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay, 
-                        days[currentDay - 1].weather.predictedForecast);
+                    store.BuyLemons(player);                    
                     BuyItems(player);
                     break;
                 case "2":
                     store.BuySugarCubes(player);
-                    UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice,
-                        player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count,
-                        store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay,
-                        days[currentDay - 1].weather.predictedForecast);
                     BuyItems(player);
                     break;
                 case "3":
                     store.BuyIceCubes(player);
-                    UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice,
-                        player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count,
-                        store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay,
-                        days[currentDay - 1].weather.predictedForecast);
                     BuyItems(player);
                     break;
                 case "4":
                     store.BuyCups(player);
-                    UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count, store.bulkSugarPrice,
-                        player.inventory.sugarCubes.Count, store.bulkIcePrice, player.inventory.iceCubes.Count,
-                        store.bulkCupPrice, player.inventory.cups.Count, player.wallet.Money, currentDay,
-                        days[currentDay - 1].weather.predictedForecast);
                     BuyItems(player);
                     break;
                 case "5":
-                    UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-                         player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count, player.recipe.amountOfIceCubes,
-                         player.inventory.iceCubes.Count, player.recipe.pricePerCup);
+                    //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
+                    //     player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count, player.recipe.amountOfIceCubes,
+                    //     player.inventory.iceCubes.Count, player.recipe.pricePerCup);
+                    AddItems();
                     break;
                 default:
                     {
                         UserInterface.NotAValidOption();
-                        BuyItems(player);
+                        BuyItems(player);                                                                    
                         break;
                     }
             }

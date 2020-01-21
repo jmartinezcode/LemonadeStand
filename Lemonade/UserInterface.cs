@@ -88,7 +88,7 @@ namespace Lemonade
             Console.WriteLine("1. Lemons per Pitcher:       {0}   Lemon Inventory: {1}", lemonRecipe, lemonCount);
             Console.WriteLine("2. Sugar Cubes per Pitcher:  {0}   Sugar Inventory: {1}", sugarRecipe, sugarCount);
             Console.WriteLine("3. Ice Cubes per Pitcher:    {0}   Ice   Inventory: {1}", iceRecipe, iceCount);
-            Console.WriteLine("4. Price Per Cup:            {0}", cupPrice);
+            Console.WriteLine("4. Price Per Cup:           ${0}", cupPrice);
             Console.WriteLine("5. Begin Round!");
             Console.WriteLine("6. Go to the Store");
             Console.WriteLine("Enter the number of the ingredient you would like to change (1-3)");
