@@ -14,7 +14,6 @@ namespace Lemonade
         double pricePerIceCube;
         double pricePerCup;
         Random random;
-        Wallet wallet;
         int bulkQty;
 
         public double bulkLemonPrice;

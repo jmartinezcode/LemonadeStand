@@ -13,7 +13,6 @@ namespace Lemonade
         List<Day> days;
         Day day;
         Store store;
-        Recipe recipe;
 
         public Random random;
 
@@ -127,7 +126,7 @@ namespace Lemonade
                     AddItems();
                     break;
                 case "4":
-                    player.recipe.CupPrice(player.inventory);
+                    player.recipe.CupPrice();
                     AddItems();
                     break;
                 case "5":
