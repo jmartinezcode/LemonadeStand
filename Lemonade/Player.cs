@@ -30,37 +30,39 @@ namespace Lemonade
         {
             while(pitcher.cupsLeftInPitcher == 0)
             {
-                if(inventory.lemons.Count >= recipe.amountOfLemons && 
-                    inventory.sugarCubes.Count >= recipe.amountOfSugarCubes && 
-                    inventory.iceCubes.Count >= recipe.amountOfIceCubes)
+                while(inventory.lemons.Count > 0 && inventory.sugarCubes.Count > 0 && inventory.iceCubes.Count > 0)
                 {
-                    for (int i = 0; i < recipe.amountOfLemons; i++)
+                    if (inventory.lemons.Count >= recipe.amountOfLemons &&
+                        inventory.sugarCubes.Count >= recipe.amountOfSugarCubes &&
+                        inventory.iceCubes.Count >= recipe.amountOfIceCubes && inventory.lemons.Count > 0 
+                        && inventory.iceCubes.Count > 0 && inventory.sugarCubes.Count > 0)
                     {
-                        inventory.lemons.Remove(inventory.lemons[0]);
+                        for (int i = 0; i < recipe.amountOfLemons; i++)
+                        {
+                            inventory.lemons.Remove(inventory.lemons[0]);
+                        }
+                        for (int i = 0; i < recipe.amountOfSugarCubes; i++)
+                        {
+                            inventory.sugarCubes.Remove(inventory.sugarCubes[0]);
+                        }
+                        for (int i = 0; i < recipe.amountOfIceCubes; i++)
+                        {
+                            inventory.iceCubes.Remove(inventory.iceCubes[0]);
+                        }
+                        pitcher.cupsLeftInPitcher = 12;
                     }
-                    for (int i = 0; i < recipe.amountOfSugarCubes; i++)
-                    {
-                        inventory.sugarCubes.Remove(inventory.sugarCubes[0]);
-                    }
-                    for (int i = 0; i < recipe.amountOfIceCubes; i++)
-                    {
-                        inventory.iceCubes.Remove(inventory.iceCubes[0]);
-                    }
-                    pitcher.cupsLeftInPitcher = 4;
-                    Console.WriteLine("The pitcher has been refilled");
                 }
-                else
-                {
-                    Console.WriteLine("We are sold out");
-                }
+              
             }
         }
         public void SellCup()
         {
+            if (pitcher.cupsLeftInPitcher > 0)
+            {
                 pitcher.cupsLeftInPitcher--;
                 inventory.cups.Remove(inventory.cups[0]);
                 wallet.Money += recipe.pricePerCup;
- 
+            }
         }
     }
 }
