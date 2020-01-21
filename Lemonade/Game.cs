@@ -89,6 +89,7 @@ namespace Lemonade
             // Potentially sell to each customer
             double salesPrice = player.recipe.pricePerCup;
             int cupsSold = 0;
+            player.FillPitcher();
             foreach (Customer customer in day.customers)
             {
                 if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0 && player.inventory.cups.Count > 0)

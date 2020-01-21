@@ -46,7 +46,7 @@ namespace Lemonade
                     {
                         inventory.iceCubes.Remove(inventory.iceCubes[0]);
                     }
-                    pitcher.cupsLeftInPitcher = 12;
+                    pitcher.cupsLeftInPitcher = 4;
                     Console.WriteLine("The pitcher has been refilled");
                 }
                 else
@@ -60,6 +60,7 @@ namespace Lemonade
                 pitcher.cupsLeftInPitcher--;
                 inventory.cups.Remove(inventory.cups[0]);
                 wallet.Money += recipe.pricePerCup;
+ 
         }
     }
 }
