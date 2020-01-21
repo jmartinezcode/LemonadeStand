@@ -56,15 +56,18 @@ namespace Lemonade
             Console.WriteLine("You've chosen to play for {0} days!\nPress enter to continue.", numberDays);
             Console.Read();
         }
-        public static void DisplayEndOfDayReport(int dayCount, int cupsSold, int customerCount, double moneyCount, string predictedWeather, int actualTemp, string actualCondition)
+        public static void DisplayEndOfDayReport(int dayCount, int cupsSold, double dailyProfit,
+                                                 int customerCount, double moneyCount, double totalProfit,
+                                                 string predictedWeather, int actualTemp, 
+                                                 string actualCondition)
         {
             // Displays Game's Status 
             Console.Clear();
-            Console.WriteLine("\n\n\nHere is your Day {0} report\n=================================================\n", dayCount);
-            Console.WriteLine("You sold {0} cups of lemonade!", cupsSold);
-            Console.WriteLine("There were {0} customers", customerCount);            
+            Console.WriteLine("Here is your Day {0} report\n=================================================\n", dayCount);
+            Console.WriteLine("You sold {0} cups of lemonade!       Your Daily Profit: ${1}", cupsSold, dailyProfit);
+            Console.WriteLine("There were {0} customers.            Your Total Profit: ${1}\n", customerCount, totalProfit); 
             Console.WriteLine("The predicted weather was {0}\nThe actual weather was {1} and {2}", predictedWeather, actualTemp, actualCondition);
-            Console.WriteLine("You now have ${0}", moneyCount);
+            Console.WriteLine("You now have ${0}\n", moneyCount);
             Console.WriteLine("Your remaining ice has melted");
             Console.ReadLine();
         }
