@@ -63,6 +63,5 @@ namespace Lemonade
                         amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                         inventory.iceCubes.Count, pricePerCup);
         }
-
     }
 }
