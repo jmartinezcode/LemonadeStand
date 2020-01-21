@@ -63,6 +63,7 @@ namespace Lemonade
                 if (amountOfIceCubes > inventory.iceCubes.Count)
                 {
                     UserInterface.NotEnoughInventory(iceCube.name);
+                    AddIce(inventory);
                 }
             }
             catch (FormatException)
