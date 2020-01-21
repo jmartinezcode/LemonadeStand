@@ -107,11 +107,6 @@ namespace Lemonade
             currentDay++;
             CheckCurrentDay();
         }
-        //SOLID example below: Single Responsibiliy. The below AddItems method demonstrates our use of single
-        //responsibility because this switch case originally had the methods written out for each case within it.
-        //However we moved that logic to within their own methods so that this method was used more as an access point
-        //to other methods rather than executing the logic held within them.
-
         public void AddItems()
         {
             UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
@@ -187,15 +182,14 @@ namespace Lemonade
             double chanceToBuy = PriceFactor() + HeatFactor();
             foreach (Customer customer in day.customers)
             {
-                customer.maxPrice = random.Next(36) / 100.0;
-                customer.chanceToBuy = random.NextDouble();
-
+                customer.maxPrice = random.Next(36) / 100.0; // price customer willing to pay between 0 and 0.35 
+                customer.chanceToBuy = random.NextDouble();  // 
                 customer.chanceToBuy += chanceToBuy;
             }
         }
         public double PriceFactor()
         {
-            return (maxPrice - player.recipe.pricePerCup) / maxPrice; // 1% less demand for each cent increase in price
+            return (maxPrice - player.recipe.pricePerCup) / maxPrice; // less demand for each cent increase in price
         }
         public double HeatFactor()
         {
