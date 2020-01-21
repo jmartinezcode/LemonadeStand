@@ -92,6 +92,7 @@ namespace Lemonade
                     UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
                          amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
                          inventory.iceCubes.Count, pricePerCup);
+                    break; // added to fix testing, remove if necessary
                 case "5":
                     break;
                 case "6":

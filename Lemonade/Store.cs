@@ -44,11 +44,11 @@ namespace Lemonade
         //Member Methods (CAN DO)
         public void BuyLemons(Player player)
         {
-            int lemonsBought = Int32.Parse(Console.ReadLine());
             Lemon lemon = new Lemon();
-            if (player.wallet.Money > pricePerLemon)
+            if (player.wallet.Money >= pricePerLemon * bulkQty)
             {
-                for (int i = 0; i < lemonsBought; i++)
+                UserInterface.BuyItem(bulkQty, lemon.name);
+                for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.lemons.Add(lemon);
                     player.wallet.Money -= pricePerLemon;
@@ -61,11 +61,11 @@ namespace Lemonade
         }
         public void BuySugarCubes(Player player)
         {
-            int sugarCubesBought = Int32.Parse(Console.ReadLine());
             SugarCube sugarCube = new SugarCube();
-            if (player.wallet.Money > pricePerSugarCube)
-            {                
-                for (int i = 0; i < sugarCubesBought; i++)
+            if (player.wallet.Money >= pricePerSugarCube * bulkQty)
+            {
+                UserInterface.BuyItem(bulkQty, sugarCube.name);
+                for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.sugarCubes.Add(sugarCube);
                     player.wallet.Money -= pricePerSugarCube;
@@ -78,11 +78,11 @@ namespace Lemonade
         }
         public void BuyIceCubes(Player player)
         {
-            int iceCubesBought = Int32.Parse(Console.ReadLine());
             IceCube iceCube = new IceCube();
-            if (player.wallet.Money > pricePerIceCube)
+            if (player.wallet.Money >= pricePerIceCube * bulkQty)
             {
-                for (int i = 0; i < iceCubesBought; i++)
+                UserInterface.BuyItem(bulkQty, iceCube.name);
+                for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.iceCubes.Add(iceCube);
                     player.wallet.Money -= pricePerIceCube;
@@ -95,11 +95,11 @@ namespace Lemonade
         }
         public void BuyCups(Player player)
         {
-            int cupsBought = Int32.Parse(Console.ReadLine());
             Cup cup = new Cup();
-            if (wallet.Money > pricePerCup)
+            if (wallet.Money >= pricePerCup * bulkQty)
             {
-                for (int i = 0; i < cupsBought; i++)
+                UserInterface.BuyItem(bulkQty, cup.name);
+                for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.cups.Add(cup);
                     player.wallet.Money -= pricePerCup;
