@@ -68,6 +68,7 @@ namespace Lemonade
                                         double cupPrice, int cupCount, 
                                         double moneyCount, int dayCount, string forecast)
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Store Day {0}\n=================================================\n", dayCount);
             Console.WriteLine("You currently have: ${0}", moneyCount);
             DisplayForecast(forecast);
@@ -82,6 +83,7 @@ namespace Lemonade
                                          int iceRecipe, int iceCount,
                                          double cupPrice)
         {
+            Console.Clear();
             Console.WriteLine("Your Award Winning Recipe \n=================================================\n");
             Console.WriteLine("1. Lemons per Pitcher:       {0}   Lemon Inventory: {1}", lemonRecipe, lemonCount);
             Console.WriteLine("2. Sugar Cubes per Pitcher:  {0}   Sugar Inventory: {1}", sugarRecipe, sugarCount);
