@@ -48,10 +48,11 @@ namespace Lemonade
             if (player.wallet.Money >= pricePerLemon * bulkQty)
             {
                 UserInterface.BuyItem(bulkQty, lemon.name);
+                player.wallet.Money -= bulkLemonPrice;
                 for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.lemons.Add(lemon);
-                    player.wallet.Money -= pricePerLemon;
+                    //player.wallet.Money -= pricePerLemon;
                 }
             }
             else

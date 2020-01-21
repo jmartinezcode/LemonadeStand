@@ -18,7 +18,7 @@ namespace Lemonade
             }
             set
             {
-                if (money <= 0)
+                if (value <= 0)
                 {
                     money = 0;
                 }
