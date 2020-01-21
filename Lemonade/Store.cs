@@ -31,7 +31,7 @@ namespace Lemonade
             random = new Random();
             bulkQty = 5;
 
-            pricePerLemon = random.Next(95, 105) / 100.0; 
+            pricePerLemon = random.Next(15, 65) / 100.0; 
             pricePerSugarCube = random.Next(3, 10) / 100.0;
             pricePerIceCube = random.Next(2, 4) / 100.0;
             pricePerCup = random.Next(3, 6) / 100.0;
@@ -48,10 +48,10 @@ namespace Lemonade
             Lemon lemon = new Lemon();
             if (player.wallet.Money > pricePerLemon)
             {
-                player.wallet.Money -= pricePerLemon;
                 for (int i = 0; i < lemonsBought; i++)
                 {
                     player.inventory.lemons.Add(lemon);
+                    player.wallet.Money -= pricePerLemon;
                 }
             }
             else
@@ -64,11 +64,11 @@ namespace Lemonade
             int sugarCubesBought = Int32.Parse(Console.ReadLine());
             SugarCube sugarCube = new SugarCube();
             if (player.wallet.Money > pricePerSugarCube)
-            {
-                player.wallet.Money = -pricePerSugarCube;
+            {                
                 for (int i = 0; i < sugarCubesBought; i++)
                 {
                     player.inventory.sugarCubes.Add(sugarCube);
+                    player.wallet.Money -= pricePerSugarCube;
                 }
             }
             else
@@ -82,10 +82,10 @@ namespace Lemonade
             IceCube iceCube = new IceCube();
             if (player.wallet.Money > pricePerIceCube)
             {
-                wallet.Money -= pricePerIceCube;
                 for (int i = 0; i < iceCubesBought; i++)
                 {
                     player.inventory.iceCubes.Add(iceCube);
+                    player.wallet.Money -= pricePerIceCube;
                 }
             }
             else
@@ -99,10 +99,10 @@ namespace Lemonade
             Cup cup = new Cup();
             if (wallet.Money > pricePerCup)
             {
-                wallet.Money -= pricePerCup;
                 for (int i = 0; i < cupsBought; i++)
                 {
                     player.inventory.cups.Add(cup);
+                    player.wallet.Money -= pricePerCup;
                 }
             }
             else
