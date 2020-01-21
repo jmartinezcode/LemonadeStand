@@ -18,6 +18,8 @@ namespace Lemonade
 
         int currentDay;
         double maxPrice;
+        double startOfDayMoney;
+        double totalProfit = 0;
 
         //Constructor
         public Game()
@@ -72,10 +74,12 @@ namespace Lemonade
         {
             do
             {
-                player.inventory.iceCubes.Clear(); // removes all ice each day               
+                player.inventory.iceCubes.Clear(); // removes all ice each day   
+                
                 Console.Clear();                
                 try
                 {
+                    startOfDayMoney = player.wallet.Money;
                     RunGame();
                     days[currentDay] = new Day();                    
                 }
@@ -90,7 +94,7 @@ namespace Lemonade
         {
             // Potentially sell to each customer
             double salesPrice = player.recipe.pricePerCup;
-            int cupsSold = 0;
+            int cupsSold = 0;            
             double chanceThreshold = 1.5;
             player.FillPitcher();
             CalcCustomerChanceToBuy();
@@ -102,10 +106,16 @@ namespace Lemonade
                     cupsSold++;
                 }
             }
-            UserInterface.DisplayEndOfDayReport(currentDay, cupsSold, days[currentDay - 1].customers.Count,
-                                                player.wallet.Money, day.weather.predictedForecast, day.weather.temperature, day.weather.condition);
+            double dailyProfit = CalculateDailyProfit();
+            totalProfit += dailyProfit;
+            UserInterface.DisplayEndOfDayReport(currentDay, cupsSold, dailyProfit, days[currentDay - 1].customers.Count,
+                                                player.wallet.Money, totalProfit, day.weather.predictedForecast, day.weather.temperature, day.weather.condition);
             currentDay++;
             CheckCurrentDay();
+        }
+        public double CalculateDailyProfit()
+        {
+            return player.wallet.Money - startOfDayMoney;
         }
         public void AddItems()
         {
