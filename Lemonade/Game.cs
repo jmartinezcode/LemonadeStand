@@ -71,18 +71,17 @@ namespace Lemonade
             do
             {
                 player.inventory.iceCubes.Clear(); // removes all ice each day               
-                Console.Clear();
-                RunGame();
+                Console.Clear();                
                 try
                 {
-                    days[currentDay] = new Day();
+                    RunGame();
+                    days[currentDay] = new Day();                    
                 }
                 catch (Exception)
                 {
                     UserInterface.DisplayGameOver();
                     break;
-                }
-                currentDay++;
+                }                
             } while (player.wallet.Money != 0 && currentDay <= days.Count);
         }
         public void RunDay()
@@ -92,7 +91,7 @@ namespace Lemonade
             int cupsSold = 0;
             foreach (Customer customer in day.customers)
             {
-                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0) // && player.inventory.cups.Count > 0)
+                if (customer.maxPrice <= salesPrice && customer.chanceToBuy > 0 && player.inventory.cups.Count > 0)
                 {
                     player.SellCup();
                     cupsSold++;
@@ -100,6 +99,7 @@ namespace Lemonade
             }
             UserInterface.DisplayEndOfDayReport(currentDay, cupsSold, days[currentDay - 1].customers.Count,
                                                 player.wallet.Money, day.weather.predictedForecast, day.weather.temperature, day.weather.condition);
+            currentDay++;
             CheckCurrentDay();
         }
         public void AddItems()
