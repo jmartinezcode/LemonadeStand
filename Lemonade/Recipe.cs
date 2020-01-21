@@ -21,6 +21,7 @@ namespace Lemonade
         //Constructor
         public void AddLemons(Inventory inventory)
         {
+            Lemon lemon = new Lemon();
             UserInterface.AddItemsToRecipe(lemon.name);
             amountOfLemons = Int32.Parse(Console.ReadLine());
             if (amountOfLemons > inventory.lemons.Count)
@@ -33,6 +34,7 @@ namespace Lemonade
         }
         public void AddSugar(Inventory inventory)
         {
+            SugarCube sugarCube = new SugarCube();
             UserInterface.AddItemsToRecipe(sugarCube.name);
             amountOfSugarCubes = Int32.Parse(Console.ReadLine());
             if (amountOfSugarCubes > inventory.sugarCubes.Count)
@@ -45,6 +47,7 @@ namespace Lemonade
         }
         public void AddIce(Inventory inventory)
         {
+            IceCube iceCube = new IceCube();
             UserInterface.AddItemsToRecipe(iceCube.name);
             amountOfIceCubes = Int32.Parse(Console.ReadLine());
             if (amountOfIceCubes > inventory.iceCubes.Count)
