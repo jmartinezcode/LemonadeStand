@@ -111,36 +111,5 @@ namespace Lemonade
                 UserInterface.NotEnoughMoney(cup.name);
             }
         }
-        public void BuyItems(Player player)
-        {
-            string userinput = Console.ReadLine();
-            switch (userinput)
-            {
-                case "1":
-                    BuyLemons(player);
-                    BuyItems(player);
-                    break;
-                case "2":
-                    BuySugarCubes(player);
-                    break;
-                case "3":
-                    BuyIceCubes(player);
-                    break;
-                case "4":
-                    BuyCups(player);
-                    break;
-                case "5":
-                    UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-                         player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count, player.recipe.amountOfIceCubes,
-                         player.inventory.iceCubes.Count, player.recipe.pricePerCup);
-                    break;
-                default:
-                    {                                               
-                        BuyItems(player);
-                        UserInterface.NotAValidOption();
-                        break;
-                    }
-            }
-        }
     }
 }
