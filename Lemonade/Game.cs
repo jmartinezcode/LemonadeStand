@@ -64,17 +64,7 @@ namespace Lemonade
         }
         public void RunGame()
         {
-            // Runs Game            
-            //UserInterface.DisplayStore(store.bulkLemonPrice, player.inventory.lemons.Count,
-            //                           store.bulkSugarPrice, player.inventory.sugarCubes.Count,
-            //                           store.bulkIcePrice, player.inventory.iceCubes.Count,
-            //                           store.bulkCupPrice, player.inventory.cups.Count,
-            //                           player.wallet.Money, currentDay, days[currentDay - 1].weather.predictedForecast);
             BuyItems(player);
-            //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-            //                            player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count,
-            //                            player.recipe.amountOfIceCubes, player.inventory.iceCubes.Count,
-            //                            player.recipe.pricePerCup);
             AddItems();
 
             Console.WriteLine("There are {0} customers today", days[currentDay - 1].customers.Count); // This is for testing only, To be removed
@@ -175,9 +165,6 @@ namespace Lemonade
                     BuyItems(player);
                     break;
                 case "5":
-                    //UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
-                    //     player.recipe.amountOfSugarCubes, player.inventory.sugarCubes.Count, player.recipe.amountOfIceCubes,
-                    //     player.inventory.iceCubes.Count, player.recipe.pricePerCup);
                     AddItems();
                     break;
                 default:
