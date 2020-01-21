@@ -52,7 +52,6 @@ namespace Lemonade
                 for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.lemons.Add(lemon);
-                    //player.wallet.Money -= pricePerLemon;
                 }
             }
             else
@@ -66,10 +65,10 @@ namespace Lemonade
             if (player.wallet.Money >= pricePerSugarCube * bulkQty)
             {
                 UserInterface.BuyItem(bulkQty, sugarCube.name);
+                player.wallet.Money -= bulkSugarPrice;
                 for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.sugarCubes.Add(sugarCube);
-                    player.wallet.Money -= pricePerSugarCube;
                 }
             }
             else
@@ -83,10 +82,10 @@ namespace Lemonade
             if (player.wallet.Money >= pricePerIceCube * bulkQty)
             {
                 UserInterface.BuyItem(bulkQty, iceCube.name);
+                player.wallet.Money -= bulkIcePrice;
                 for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.iceCubes.Add(iceCube);
-                    player.wallet.Money -= pricePerIceCube;
                 }
             }
             else
@@ -97,13 +96,13 @@ namespace Lemonade
         public void BuyCups(Player player)
         {
             Cup cup = new Cup();
-            if (wallet.Money >= pricePerCup * bulkQty)
+            if (player.wallet.Money >= pricePerCup * bulkQty)
             {
                 UserInterface.BuyItem(bulkQty, cup.name);
+                player.wallet.Money -= bulkCupPrice;
                 for (int i = 0; i < bulkQty; i++)
                 {
                     player.inventory.cups.Add(cup);
-                    player.wallet.Money -= pricePerCup;
                 }
             }
             else
