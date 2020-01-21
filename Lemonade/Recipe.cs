@@ -21,10 +21,10 @@ namespace Lemonade
             UserInterface.AddItemsToRecipe(lemon.name);
             try
             {
-                amountOfLemons = Int32.Parse(Console.ReadLine());
+                amountOfLemons = Math.Abs(Int32.Parse(Console.ReadLine()));
                 if (amountOfLemons > inventory.lemons.Count)
                 {
-                    UserInterface.NotEnoughInventory(inventory.lemons[0].name);
+                    UserInterface.NotEnoughInventory(lemon.name);
                     AddLemons(inventory);
                 }
             }
@@ -40,10 +40,10 @@ namespace Lemonade
             UserInterface.AddItemsToRecipe(sugarCube.name);
             try
             {
-                amountOfSugarCubes = Int32.Parse(Console.ReadLine());
+                amountOfSugarCubes = Math.Abs(Int32.Parse(Console.ReadLine()));
                 if (amountOfSugarCubes > inventory.sugarCubes.Count)
                 {
-                    UserInterface.NotEnoughInventory(inventory.sugarCubes[0].name);
+                    UserInterface.NotEnoughInventory(sugarCube.name);
                     AddSugar(inventory);
                 }
             }
@@ -59,10 +59,10 @@ namespace Lemonade
             UserInterface.AddItemsToRecipe(iceCube.name);
             try
             {
-                amountOfIceCubes = Int32.Parse(Console.ReadLine());
+                amountOfIceCubes = Math.Abs(Int32.Parse(Console.ReadLine()));
                 if (amountOfIceCubes > inventory.iceCubes.Count)
                 {
-                    UserInterface.NotEnoughInventory(inventory.iceCubes[0].name);
+                    UserInterface.NotEnoughInventory(iceCube.name);
                 }
             }
             catch (FormatException)
@@ -76,7 +76,11 @@ namespace Lemonade
             Console.WriteLine("How much would you like to charge per cup?");
             try
             {
-                pricePerCup = Double.Parse(Console.ReadLine());
+                pricePerCup = Math.Abs(Double.Parse(Console.ReadLine()));
+                if (pricePerCup <= 0)
+                {
+                    UserInterface.NotAValidOption();
+                }                
             }
             catch (FormatException)
             {
