@@ -33,6 +33,13 @@ namespace Lemonade
                 UserInterface.NotAValidOption();
                 AddLemons(inventory);
             }
+<<<<<<< HEAD
+=======
+            
+            UserInterface.DisplayRecipe(amountOfLemons, inventory.lemons.Count,
+                        amountOfSugarCubes, inventory.sugarCubes.Count, amountOfIceCubes,
+                        inventory.iceCubes.Count, pricePerCup, inventory.cups.Count);
+>>>>>>> 8ac8f0fee540e42b7c55cc3bc366e26d570e0ec7
         }
         public void AddSugar(Inventory inventory)
         {
