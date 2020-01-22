@@ -52,7 +52,8 @@ namespace Lemonade
                         pitcher.cupsLeftInPitcher = 12;
                     }
                     break;
-                }             
+                }
+                break;
             }
         }
         public void SellCup()
