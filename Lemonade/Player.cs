@@ -37,18 +37,9 @@ namespace Lemonade
                         inventory.iceCubes.Count >= recipe.amountOfIceCubes && inventory.lemons.Count > 0 
                         && inventory.iceCubes.Count > 0 && inventory.sugarCubes.Count > 0)
                     {
-                        for (int i = 0; i < recipe.amountOfLemons; i++)
-                        {
-                            inventory.lemons.Remove(inventory.lemons[0]);
-                        }
-                        for (int i = 0; i < recipe.amountOfSugarCubes; i++)
-                        {
-                            inventory.sugarCubes.Remove(inventory.sugarCubes[0]);
-                        }
-                        for (int i = 0; i < recipe.amountOfIceCubes; i++)
-                        {
-                            inventory.iceCubes.Remove(inventory.iceCubes[0]);
-                        }
+                        inventory.lemons.RemoveRange(0, recipe.amountOfLemons);
+                        inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugarCubes);
+                        inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
                         pitcher.cupsLeftInPitcher = 12;
                     }
                     break;
