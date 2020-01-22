@@ -21,7 +21,9 @@ namespace Lemonade
             NumberOfGeneratedCustomers();
             GenerateCustomers();
         }
-
+        //Single Responsibility Principle: Each of the below methods perform a single responsibility: 
+        //the first one only determines the number of generated customers based on the input weather condition
+        //the second will only create a list of customers based on the input from previous method
         public void NumberOfGeneratedCustomers()
         {
             // Number of customers varies on weather:            
