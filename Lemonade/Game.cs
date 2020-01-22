@@ -96,15 +96,18 @@ namespace Lemonade
             double salesPrice = player.recipe.pricePerCup;
             int cupsSold = 0;            
             double chanceThreshold = 1.5;
-            player.FillPitcher();
-            CalcCustomerChanceToBuy();
-            foreach (Customer customer in day.customers)
+            if (player.recipe.amountOfLemons > 0 && player.recipe.amountOfIceCubes > 0 && player.recipe.amountOfSugarCubes > 0)
             {
-                if (salesPrice <= customer.maxPrice && customer.chanceToBuy > chanceThreshold && player.inventory.cups.Count > 0)
+                player.FillPitcher();
+                CalcCustomerChanceToBuy();
+                foreach (Customer customer in day.customers)
                 {
-                    player.SellCup();
-                    cupsSold++;
-                    player.FillPitcher();
+                    if (salesPrice <= customer.maxPrice && customer.chanceToBuy > chanceThreshold && player.inventory.cups.Count > 0 && player.pitcher.cupsLeftInPitcher > 0)
+                    {
+                        player.SellCup();
+                        cupsSold++;
+                        player.FillPitcher();
+                    }
                 }
             }
             double dailyProfit = CalculateDailyProfit();
@@ -118,6 +121,8 @@ namespace Lemonade
         {
             return player.wallet.Money - startOfDayMoney;
         }
+        //SOLID Example below: Single Responsibility. The switch case below is an example of single responsibility. Instead of holding the logic for each case, 
+        //we moved that to a seperate method so that each method focuses on one carrying out one task.
         public void AddItems()
         {
             UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
