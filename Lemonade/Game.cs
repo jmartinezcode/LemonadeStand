@@ -121,6 +121,8 @@ namespace Lemonade
         {
             return player.wallet.Money - startOfDayMoney;
         }
+        //SOLID Example below: Single Responsibility. The switch case below is an example of single responsibility. Instead of holding the logic for each case, 
+        //we moved that to a seperate method so that each method focuses on one carrying out one task.
         public void AddItems()
         {
             UserInterface.DisplayRecipe(player.recipe.amountOfLemons, player.inventory.lemons.Count,
