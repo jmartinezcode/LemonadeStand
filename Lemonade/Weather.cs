@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Weather
+    public class Weather
     {
         public string condition;
         public int temperature;

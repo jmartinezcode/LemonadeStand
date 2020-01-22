@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LemonadeTest
 {
     [TestClass]
-    public class UnitTest1
+    public class WeatherTest
     {
         [TestMethod]
         public void TestMethod1()

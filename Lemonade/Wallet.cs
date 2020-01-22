@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Wallet
+    public class Wallet
     {
         //Member Variables (HAS A)
         double money = 20;

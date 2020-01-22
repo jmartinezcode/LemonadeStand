@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    abstract class Item
+    public abstract class Item
     {
 
         //Liskov's Principle Example Below: We used Liskov's principle throughout this project as you can easily
