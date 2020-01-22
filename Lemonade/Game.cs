@@ -102,7 +102,7 @@ namespace Lemonade
                 CalcCustomerChanceToBuy();
                 foreach (Customer customer in day.customers)
                 {
-                    if (salesPrice <= customer.maxPrice && customer.chanceToBuy > chanceThreshold && player.inventory.cups.Count > 0)
+                    if (salesPrice <= customer.maxPrice && customer.chanceToBuy > chanceThreshold && player.inventory.cups.Count > 0 && player.pitcher.cupsLeftInPitcher > 0)
                     {
                         player.SellCup();
                         cupsSold++;
