@@ -104,6 +104,7 @@ namespace Lemonade
                 {
                     player.SellCup();
                     cupsSold++;
+                    player.FillPitcher();
                 }
             }
             double dailyProfit = CalculateDailyProfit();

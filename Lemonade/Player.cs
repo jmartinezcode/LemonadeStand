@@ -51,18 +51,15 @@ namespace Lemonade
                         }
                         pitcher.cupsLeftInPitcher = 12;
                     }
-                }
-              
+                    break;
+                }             
             }
         }
         public void SellCup()
         {
-            if (pitcher.cupsLeftInPitcher > 0)
-            {
                 pitcher.cupsLeftInPitcher--;
                 inventory.cups.Remove(inventory.cups[0]);
                 wallet.Money += recipe.pricePerCup;
-            }
         }
     }
 }
