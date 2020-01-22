@@ -18,7 +18,7 @@ namespace Lemonade
             random = new Random();
             weatherConditions = new List<string>() { "Sunny", "Overcast", "Hazy", "Rain" };
             SetTemperature();
-            SetCondition();
+            SetCondition(GenerateRandomIndex());
             SetForecast();
         }
 
@@ -27,17 +27,20 @@ namespace Lemonade
             // Set Temperature randomly between 50 and 100 degrees            
             temperature = random.Next(50, 101);
         }
-        public void SetCondition()
+        public void SetCondition(int index)
         {
             // Randomly pull from weatherConditions List
-            condition = weatherConditions[random.Next(weatherConditions.Count)];
+            condition = weatherConditions[index];
         }
         public void SetForecast()
         {
             // Takes output from SetCondition and SetTemperature to output predictedForecast
             int temperatureVariance = random.Next(-7, 8);
             predictedForecast = (temperature + temperatureVariance) + " degrees and " + condition;
-
+        }
+        public int GenerateRandomIndex()
+        {
+            return random.Next(weatherConditions.Count);
         }
 
 

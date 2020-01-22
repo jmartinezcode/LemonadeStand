@@ -13,6 +13,10 @@ namespace Lemonade
             Game game = new Game();
 
             //testing
+            Weather weather = new Weather();
+
+            weather.SetCondition(1);
+
 
         }
     }
